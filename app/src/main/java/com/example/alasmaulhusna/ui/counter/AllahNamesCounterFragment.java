@@ -59,30 +59,28 @@ public class AllahNamesCounterFragment extends Fragment {
         page = binding.page;
         salavatCounter = binding.salavatCounter;
         handler = new Handler();
-        /*
-        textsArabic = new String[99];
-        textPage = new String[99];
-        textCount = new String[99];
-        save = new String[99];
-
-         */
         seekBar = binding.seekBar;
-
-        //Objects.requireNonNull(getSupportActionBar()).hide();
-
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                saveText();
                 currentPage = progress;
                 textPage[currentPage] = Integer.toString(progress);
+                //loadPage();
                 seekBar.setProgress(progress);
+                loadText();
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
+                saveText();
+                loadText();
+                //savePage();
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                saveText();
+                loadText();
             }
 
         });
