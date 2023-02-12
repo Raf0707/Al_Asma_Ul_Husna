@@ -151,7 +151,8 @@ public class AppAboutFragment extends Fragment {
                         getString(R.string.tabiin),
                         R.color.purple_300));
 
-        binding.otherAppsBtn.setOnClickListener(view -> {
+        binding.otherAppsBtn.setOnClickListener(v -> new CustomTabUtil()
+            /*
             final String appPackageName = requireContext().getPackageName();
 
             try {
@@ -159,9 +160,13 @@ public class AppAboutFragment extends Fragment {
             } catch (android.content.ActivityNotFoundException anfe) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.GOOGLE_PLAY))));
             }
+            vk.com/@tabiin_muslim_planner-tabiin-android-development
+             */
 
+            .openCustomTab(getActivity(),
+                    getString(R.string.tabiin_android_dev),
+                    R.color.purple_300));
 
-        });
 
         return binding.getRoot();
 
