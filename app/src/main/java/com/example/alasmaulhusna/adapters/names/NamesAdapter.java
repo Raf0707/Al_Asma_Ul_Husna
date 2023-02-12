@@ -53,19 +53,16 @@ public class NamesAdapter extends RecyclerView.Adapter<NamesAdapter.ViewHolder> 
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Name name = names.get(position);
         holder.nameView.setText(name.getName());
-        holder.cardNameItem.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                ClipboardManager clipboard = (ClipboardManager)
-                        v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("", name.getName());
-                clipboard.setPrimaryClip(clip);
+        holder.cardNameItem.setOnClickListener(v -> {
+            ClipboardManager clipboard = (ClipboardManager)
+                    v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("", name.getName());
+            clipboard.setPrimaryClip(clip);
 
-                Snackbar.make(v, "Имя " + name.getName()
-                                + " скопировано в буфер обмена",
-                        Snackbar.LENGTH_SHORT)
-                        .show();
-            }
+            Snackbar.make(v, "Имя " + name.getName()
+                            + " скопировано в буфер обмена",
+                    Snackbar.LENGTH_SHORT)
+                    .show();
         });
     }
 

@@ -48,12 +48,7 @@ public class DrawerNamesAdapter extends RecyclerView.Adapter<DrawerNamesAdapter.
 
         holder.nameView1.setText(format("%s", newName.getNameDrawer()));
 
-        holder.nameView1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                recyclerView.scrollToPosition(holder.getAdapterPosition());
-            }
-        });
+        holder.nameView1.setOnClickListener(view -> recyclerView.scrollToPosition(holder.getAdapterPosition()));
     }
 
     @Override
