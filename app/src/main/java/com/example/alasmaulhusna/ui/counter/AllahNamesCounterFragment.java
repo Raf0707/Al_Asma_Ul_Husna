@@ -66,7 +66,6 @@ public class AllahNamesCounterFragment extends Fragment {
                 saveText();
                 currentPage = progress;
                 textPage[currentPage] = Integer.toString(progress);
-                //loadPage();
                 seekBar.setProgress(progress);
                 loadText();
             }
@@ -74,7 +73,6 @@ public class AllahNamesCounterFragment extends Fragment {
             public void onStartTrackingTouch(SeekBar seekBar) {
                 saveText();
                 loadText();
-                //savePage();
             }
 
             @Override
