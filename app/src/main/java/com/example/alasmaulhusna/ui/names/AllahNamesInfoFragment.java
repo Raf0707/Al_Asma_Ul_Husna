@@ -2,6 +2,7 @@ package com.example.alasmaulhusna.ui.names;
 
 import android.os.Bundle;
 
+import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -469,6 +470,22 @@ public class AllahNamesInfoFragment extends Fragment {
         drawerNamesAdapter = new DrawerNamesAdapter(getContext(), namesDrawer, binding.drawerListItem);
         binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
         binding.nameDrawerInfo.setHasFixedSize(false);
+
+        binding.drawerListItem.addOnScrollListener(
+                new RecyclerView.OnScrollListener() {
+                    @Override
+                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                        if (dy < 0 && !binding.fabNamesInfo.isShown())
+                            binding.fabNamesInfo.show();
+                        else if (dy > 0 && binding.fabNamesInfo.isShown())
+                            binding.fabNamesInfo.hide();
+                    }
+                }
+        );
+
+        binding.fabNamesInfo.setOnClickListener(v -> {
+            binding.drawerLayoutInfo.openDrawer(GravityCompat.START);
+        });
 
         return binding.getRoot();
     }

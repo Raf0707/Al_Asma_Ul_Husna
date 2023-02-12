@@ -12,9 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.alasmaulhusna.R;
 import com.example.alasmaulhusna.objects.names.drawer_names.DrawerNamesContent;
-import com.example.alasmaulhusna.objects.names.info_names.NameInfo;
+import com.google.android.material.card.MaterialCardView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DrawerNamesAdapter extends RecyclerView.Adapter<DrawerNamesAdapter.ViewHolder> {
@@ -46,9 +45,10 @@ public class DrawerNamesAdapter extends RecyclerView.Adapter<DrawerNamesAdapter.
     public void onBindViewHolder(final ViewHolder holder, int position) {
         DrawerNamesContent newName = namesDrawer.get(position);
 
-        holder.nameView1.setText(format("%s", newName.getNameDrawer()));
+        holder.itemDrawerName.setText(format("%s", newName.getNameDrawer()));
 
-        holder.nameView1.setOnClickListener(view -> recyclerView.scrollToPosition(holder.getAdapterPosition()));
+        holder.cardDrawerNameItem.setOnClickListener(view ->
+                recyclerView.scrollToPosition(holder.getAdapterPosition()));
     }
 
     @Override
@@ -57,10 +57,12 @@ public class DrawerNamesAdapter extends RecyclerView.Adapter<DrawerNamesAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        final TextView nameView1;
+        final TextView itemDrawerName;
+        final MaterialCardView cardDrawerNameItem;
         ViewHolder(View view){
             super(view);
-            nameView1 = view.findViewById(R.id.itemDrawerNames);
+            itemDrawerName = view.findViewById(R.id.itemDrawerNames);
+            cardDrawerNameItem = view.findViewById(R.id.cardDrawerNameItem);
         }
     }
 

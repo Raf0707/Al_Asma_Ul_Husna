@@ -1,11 +1,14 @@
 package com.example.alasmaulhusna.ui.names;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.alasmaulhusna.adapters.names.DrawerNamesAdapter;
 import com.example.alasmaulhusna.adapters.names.NamesAdapter;
@@ -146,13 +149,30 @@ public class AllahNamesFragment extends Fragment {
         binding.drawerListItem.setHasFixedSize(false);
 
         drawerNamesAdapter = new DrawerNamesAdapter(getContext(), namesDrawer,
-                binding.arabicNameTextView);
+                binding.drawerListItem);
         binding.nameDrawer.setAdapter(drawerNamesAdapter);
         binding.nameDrawer.setHasFixedSize(false);
+
+        binding.drawerListItem.addOnScrollListener(
+                new RecyclerView.OnScrollListener() {
+                    @Override
+                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                        if (dy < 0 && !binding.fabNames.isShown())
+                            binding.fabNames.show();
+                        else if (dy > 0 && binding.fabNames.isShown())
+                            binding.fabNames.hide();
+                    }
+                }
+            );
+
+        binding.fabNames.setOnClickListener(v -> {
+            binding.drawerLayout.openDrawer(GravityCompat.START);
+        });
 
         return binding.getRoot();
 
     }
+
 
     public void init() {
         for(String n : namesAllaha){
@@ -165,4 +185,5 @@ public class AllahNamesFragment extends Fragment {
             namesDrawer.add(new DrawerNamesContent(i));
         }
     }
+
 }

@@ -38,6 +38,25 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabNames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/purple_300"
+                android:padding="16dp"
+                android:src="@drawable/baseline_format_list_bulleted_24"
+                app:tint="@color/white"
+                android:foregroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.954"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.976"
+                app:rippleColor="@color/white">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
