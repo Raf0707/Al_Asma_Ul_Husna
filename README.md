@@ -1,1 +1,1 @@
-# Al_Asma_Ul_Husna ![new_splash](https://user-images.githubusercontent.com/59168899/218378038-4b4dc093-4b2e-4c98-96be-f84484fea585.jpg)
+# Al_Asma_Ul_Husna ![image](https://user-images.githubusercontent.com/59168899/218378106-fe21a002-d4c7-4687-bd1f-ab1c406e7146.png)
