@@ -4,7 +4,7 @@
     <img src="https://img.shields.io/badge/Platform-Android-green.svg">
   </a>
   <a href="https://github.com/Raf0707/Al_Asma_Ul_Husna.git" style="text-decoration:none" area-label="Min API: 22">
-    <img src="https://img.shields.io/badge/minSdkVersion-23-green.svg">
+    <img src="https://img.shields.io/badge/minSdkVersion-22-green.svg">
   </a>
   <a href="https://play.google.com/store/apps/details?id=com.jvmfrog.ffsettings" style="text-decoration:none" area-label="Play Store">
     <img src="https://img.shields.io/badge/Download-Google_Play-green.svg">
