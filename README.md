@@ -23,3 +23,6 @@
 | <img src="github-files/splash_screen.jpg" width="200"/> | <img src="github-files/screen_names.jpg" width="200"/> | <img src="github-files/screen_info.jpg" width="200"/> | <img src="github-files/screen_drawer.jpg" width="200"/> | <img src="github-files/screen_counter.jpg" width="200"/> | <img src="github-files/screen_tutorial.jpg" width="200"/> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Splash Screen | Screen Names | Screen Info | Screen Drawer Content | Screen Counter | Screen Tutorial |
+
+## 🧭 Navigation never made easier 
+Self-explanatory interface without overloaded menus
