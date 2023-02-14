@@ -55,9 +55,10 @@ ___
 A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 | Permissions | Limitations| Conditions | 
+|:---:|:---:|:---:|
 |✅ Commercial use | ❌ Trademark use | 🛈 License and copyright notice |
 |✅ Modification | ❌ Liability | 🛈 State changes |
 |✅ Distribution | ❌ Warranty | 
 |✅ Patent use | 
 |✅ Private use | 
-|:---:|:---:|:---:|
+
