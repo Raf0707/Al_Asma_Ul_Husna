@@ -20,6 +20,6 @@
 ## 🆕 Material3 Design Al Asma Ul Husna for Android
 ## ⚠ Join [@Tabiin/Al_Asma_Ul_Husna](https://t.me/+Lkw3ON0EsjZlNDIy) on Telegram for important updates.
 ## 📱 Screenshots
-| file:///home/raf_0707/Изображения/Tabiin/Al Asma Ul Husna/splash_screen | file:///home/raf_0707/Изображения/Tabiin/Al Asma Ul Husna/screen_names | file:///home/raf_0707/Изображения/Tabiin/Al Asma Ul Husna/screen_info | file:///home/raf_0707/Изображения/Tabiin/Al Asma Ul Husna/screen_drawer | file:///home/raf_0707/Изображения/Tabiin/Al Asma Ul Husna/screen_counter | file:///home/raf_0707/Изображения/Tabiin/Al Asma Ul Husna/screen_tutorial 
+| https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/splash_screen | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_names | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_info | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_drawer | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_counter | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_tutorial 
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Splash Screen | Screen Names | Screen Info | Screen Drawer Content | Screen Counter | Screen Tutorial|
