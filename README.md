@@ -18,3 +18,4 @@
 </p>
 
 ## 🆕 Material3 Design Al Asma Ul Husna for Android
+## ⚠ Join [@Tabiin/Al_Asma_Ul_Husna](https://t.me/+Lkw3ON0EsjZlNDIy) on Telegram for important updates.
