@@ -20,6 +20,6 @@
 ## 🆕 Material3 Design Al Asma Ul Husna for Android
 ## ⚠ Join [@Tabiin/Al_Asma_Ul_Husna](https://t.me/+Lkw3ON0EsjZlNDIy) on Telegram for important updates.
 ## 📱 Screenshots
-| https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/splash_screen | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_names | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_info | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_drawer | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_counter | https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_tutorial 
+| <img src="https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/splash_screen.jpg" width="200"/> | <img src="https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_names.jpg" width="200"/> | <img src="https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_info.jpg" width="200"/> | <img src="https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_drawer.jpg" width="200"/> | <img src="https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_counter.jpg" width="200"/> | <img src="https://github.com/Raf0707/Al_Asma_Ul_Husna/tree/master/github-files/screen_tutorial.jpg" width="200"/> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| Splash Screen | Screen Names | Screen Info | Screen Drawer Content | Screen Counter | Screen Tutorial|
+| Splash Screen | Screen Names | Screen Info | Screen Drawer Content | Screen Counter | Screen Tutorial |
