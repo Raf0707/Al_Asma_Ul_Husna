@@ -1,4 +1,4 @@
-<h1 align="center">Al_Asma_Ul_Husna</h1>
+<h1 align="center">Al_Asma_Ul_Husna from Tabiin</h1>
 <p align="center">
   <a href="https://github.com/Raf0707/Al_Asma_Ul_Husna" style="text-decoration:none" area-label="Android">
     <img src="https://img.shields.io/badge/Platform-Android-green.svg">
