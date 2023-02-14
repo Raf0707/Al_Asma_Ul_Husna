@@ -12,7 +12,7 @@
   <a href="https://github.com/Raf0707/Al_Asma_Ul_Husna/blob/master/LICENSE.md" style="text-decoration:none" area-label="License: Apache License 2.0">
     <img src="https://img.shields.io/badge/License-Apache License 2.0-blue.svg">
   </a>
-  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/settings-for-free-fire-app"><img src="https://badges.crowdin.net/settings-for-free-fire-app/localized.svg">
+  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/al-asma-ul-husna"><img src="https://badges.crowdin.net/settings-for-free-fire-app/localized.svg">
   </a>
 
 </p>
