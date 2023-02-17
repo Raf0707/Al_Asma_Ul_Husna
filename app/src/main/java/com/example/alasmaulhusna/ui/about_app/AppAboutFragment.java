@@ -1,7 +1,5 @@
 package com.example.alasmaulhusna.ui.about_app;
 
-import static com.example.alasmaulhusna.util.UtilFragment.changeFragment;
-
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -16,9 +14,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
-
 import com.example.alasmaulhusna.BuildConfig;
+
+
 import com.example.alasmaulhusna.R;
 import com.example.alasmaulhusna.databinding.FragmentAppAboutBinding;
 import com.example.alasmaulhusna.util.CustomTabUtil;

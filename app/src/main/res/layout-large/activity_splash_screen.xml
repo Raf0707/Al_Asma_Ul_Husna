@@ -13,13 +13,13 @@
         android:gravity="center"
         android:text="فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.197" />
+        app:layout_constraintVertical_bias="0.113" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -28,10 +28,10 @@
         android:src="@drawable/tabiin_about"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.066">
+        app:layout_constraintVertical_bias="0.037">
 
     </ImageView>
 
@@ -42,13 +42,13 @@
         android:gravity="center"
         android:text="Поминайте Меня, и Я буду помнить о вас. Благодарите Меня и не будьте неблагодарны Мне"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.264" />
+        app:layout_constraintVertical_bias="0.164" />
 
     <TextView
         android:layout_width="match_parent"
@@ -56,13 +56,13 @@
         android:gravity="center"
         android:text="Коран, 2:152"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.724" />
+        app:layout_constraintVertical_bias="0.275" />
 
     <TextView
         android:id="@+id/textView"
@@ -71,7 +71,7 @@
         android:gravity="center"
         android:text="Al Asma Ul Husna"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -86,11 +86,12 @@
         android:gravity="center"
         android:text="@string/from_tabiin"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.027" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
