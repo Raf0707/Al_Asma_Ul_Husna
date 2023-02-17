@@ -34,7 +34,7 @@
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
-                        android:src="@drawable/tabiin_about" />
+                        android:src="@drawable/tabiin_night" />
 
                     <LinearLayout
                         android:layout_width="240dp"
@@ -48,6 +48,7 @@
                             android:layout_height="50dp"
                             android:gravity="center"
                             android:text="Al Asma Ul Husna"
+                            android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -56,6 +57,7 @@
                             android:layout_height="50dp"
                             android:gravity="center"
                             android:text="@string/from_tabiin"
+                            android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -73,8 +75,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/version"
+                        android:textColor="@color/white"
                         android:textAlignment="textStart"
                         android:textSize="20sp"
+                        app:iconTint="@color/white"
                         app:icon="@drawable/ic_baseline_error_outline_24"
                         app:iconPadding="16dp"
                         app:iconSize="24dp" />
@@ -85,6 +89,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/source_code"
+                        android:textColor="@color/white"
                         android:textAlignment="textStart"
                         android:textSize="20sp"
                         app:icon="@drawable/ic_baseline_code_24"
@@ -118,6 +123,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Raf_title"
                         android:textSize="20sp"
+                        android:textColor="@color/white"
+                        app:iconTint="@color/white"
                         app:icon="@drawable/ic_baseline_person_24"
                         app:iconPadding="16dp"
                         app:iconSize="24dp"
@@ -130,8 +137,10 @@
                         android:layout_height="wrap_content"
                         android:text="@string/raf_android_dev_mail_ru"
                         android:textSize="20sp"
+                        android:textColor="@color/white"
                         app:icon="@drawable/ic_baseline_alternate_email_24"
                         app:iconPadding="16dp"
+                        app:iconTint="@color/white"
                         app:iconSize="24dp"
                         android:textAlignment="textStart"
                         style="@style/Widget.Material3.Button.TextButton" />
@@ -144,7 +153,9 @@
                         android:textSize="20sp"
                         app:icon="@drawable/ic_baseline_rate_review_24"
                         app:iconPadding="16dp"
+                        android:textColor="@color/white"
                         app:iconSize="24dp"
+                        app:iconTint="@color/white"
                         android:textAlignment="textStart"
                         style="@style/Widget.Material3.Button.TextButton" />
 
@@ -154,8 +165,10 @@
                         android:layout_height="wrap_content"
                         android:text="Мы в ВКонтакте"
                         android:textSize="20sp"
+                        android:textColor="@color/white"
                         app:icon="@drawable/ic_baseline_public_24"
                         app:iconPadding="16dp"
+                        app:iconTint="@color/white"
                         app:iconSize="24dp"
                         android:textAlignment="textStart"
                         style="@style/Widget.Material3.Button.TextButton" />
@@ -166,8 +179,10 @@
                         android:layout_height="wrap_content"
                         android:text="Другие Приложения"
                         android:textSize="20sp"
+                        android:textColor="@color/white"
                         app:icon="@drawable/ic_baseline_apps_24"
                         app:iconPadding="16dp"
+                        app:iconTint="@color/white"
                         app:iconSize="24dp"
                         android:textAlignment="textStart"
                         style="@style/Widget.Material3.Button.TextButton" />
