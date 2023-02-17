@@ -2,6 +2,7 @@ package com.example.alasmaulhusna.adapters.names;
 
 import static java.lang.String.format;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.alasmaulhusna.R;
 import com.example.alasmaulhusna.objects.names.drawer_names.DrawerNamesContent;
+import com.example.alasmaulhusna.util.ResizeAnimation;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
@@ -33,6 +35,8 @@ public class DrawerNamesAdapter extends RecyclerView.Adapter<DrawerNamesAdapter.
         this.inflater = LayoutInflater.from(context);
     }
 
+
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -47,8 +51,13 @@ public class DrawerNamesAdapter extends RecyclerView.Adapter<DrawerNamesAdapter.
 
         holder.itemDrawerName.setText(format("%s", newName.getNameDrawer()));
 
-        holder.cardDrawerNameItem.setOnClickListener(view ->
-                recyclerView.scrollToPosition(holder.getAdapterPosition()));
+        holder.cardDrawerNameItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recyclerView.scrollToPosition(holder.getAdapterPosition());
+
+            }
+        });
     }
 
     @Override
