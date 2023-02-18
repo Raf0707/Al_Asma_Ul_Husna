@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ"
-        android:textColor="@color/black"
+        
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Поминайте Меня, и Я буду помнить о вас. \n Благодарите Меня \n и не будьте неблагодарны Мне"
-        android:textColor="@color/black"
+        
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Коран, 2:152"
-        android:textColor="@color/black"
+        
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Al Asma Ul Husna"
-        android:textColor="@color/black"
+        
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/from_tabiin"
-        android:textColor="@color/black"
+        
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

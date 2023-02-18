@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/tutorial_names"
-        android:textColor="@color/purple_300"
+        
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         android:imeOptions="actionDone"
         android:text="Назад к счетчику"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="17sp"
@@ -54,7 +54,7 @@
         android:imeOptions="actionDone"
         android:text="Свайп вниз"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -75,7 +75,7 @@
         android:imeOptions="actionDone"
         android:text="Нажатие на экран"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -96,7 +96,7 @@
         android:imeOptions="actionDone"
         android:text="Свайп вверх"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -116,7 +116,7 @@
         android:gravity="center"
         android:imeOptions="actionDone"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -137,7 +137,7 @@
         android:imeOptions="actionDone"
         android:text="Свайпы вправо, влево - навигация"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -158,7 +158,7 @@
         android:imeOptions="actionDone"
         android:text="Долгое нажатие на экран"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -177,7 +177,7 @@
         android:gravity="center"
         android:imeOptions="actionDone"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -197,7 +197,7 @@
         android:gravity="center"
         android:imeOptions="actionDone"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -217,7 +217,7 @@
         android:gravity="center"
         android:imeOptions="actionDone"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
@@ -238,7 +238,7 @@
         android:imeOptions="actionDone"
         android:text="Инструкция"
         android:textAllCaps="true"
-        android:textColor="@color/purple_300"
+        
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="17sp"
