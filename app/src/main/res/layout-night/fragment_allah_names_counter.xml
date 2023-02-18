@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/myLayout"
-    tools:context=".ui.counter.AllahNamesCounterFragment">
+    tools:context="ru.tabiin.alasmaulhusna.ui.counter.AllahNamesCounterFragment">
 
     <ViewStub
         android:id="@+id/view_stub"

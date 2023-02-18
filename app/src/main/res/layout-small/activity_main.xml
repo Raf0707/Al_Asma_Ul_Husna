@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="ru.tabiin.alasmaulhusna.MainActivity">
 
     <FrameLayout
         android:id="@+id/containerFragment"
@@ -20,11 +20,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-        app:itemIconSize="32dp"
+        app:itemIconSize="16dp"
         app:itemIconTint="@color/purple_300"
         app:itemTextAppearanceActive="@style/TextStyleBNV"
         app:itemTextColor="@color/purple_300"
         app:layout_anchorGravity="bottom"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="-15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
-    tools:context="com.example.alasmaulhusna.ui.names.AllahNamesFragment">
+    tools:context="ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
