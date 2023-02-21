@@ -171,6 +171,18 @@
                         app:iconSize="24dp"
                         android:textAlignment="textStart"
                         style="@style/Widget.Material3.Button.TextButton" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/settingsBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Настройки"
+                        android:textSize="20sp"
+                        app:icon="@drawable/baseline_settings_24"
+                        app:iconPadding="16dp"
+                        app:iconSize="24dp"
+                        android:textAlignment="textStart"
+                        style="@style/Widget.Material3.Button.TextButton" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

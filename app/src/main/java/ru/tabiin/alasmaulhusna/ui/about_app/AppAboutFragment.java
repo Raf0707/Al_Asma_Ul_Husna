@@ -13,12 +13,14 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import ru.tabiin.alasmaulhusna.BuildConfig;
 
 
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentAppAboutBinding;
+import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
 import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -33,21 +35,19 @@ public class AppAboutFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public void addOnClick(View view, String text, ClipData clipData) {
-        ClipboardManager clipboardManager = (ClipboardManager)
-                requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
-
-        clipboardManager.setPrimaryClip(clipData);
-        Snackbar.make(requireView(), text, Snackbar.LENGTH_LONG).show();
-    }
-
     @SuppressLint("IntentReset")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         binding = FragmentAppAboutBinding
-                .inflate(inflater, container, false);
+                .inflate(getLayoutInflater());
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         binding.appVersionBtn.setText(new StringBuilder()
                 .append(getString(R.string.version))
@@ -58,8 +58,8 @@ public class AppAboutFragment extends Fragment {
                 .append(getString(R.string.val_str_sk_left))
                 .toString());
 
-        binding.appVersionBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.version_copied),
+        binding.appVersionBtn.setOnLongClickListener(v -> {
+            addOnClick(v, getString(R.string.version_copied),
                     ClipData.newPlainText(
                             getString(R.string.getContext),
                             new StringBuilder()
@@ -74,36 +74,36 @@ public class AppAboutFragment extends Fragment {
             return true;
         });
 
-        binding.sourceCodeBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.link_to_source_copied),
+        binding.sourceCodeBtn.setOnLongClickListener(v -> {
+            addOnClick(v, getString(R.string.link_to_source_copied),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.source_code_url)));
             return true;
         });
 
-        binding.rafailBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.raf_git_copylink),
+        binding.rafailBtn.setOnLongClickListener(v -> {
+            addOnClick(v, getString(R.string.raf_git_copylink),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.rafail_url)));
             return true;
         });
 
-        binding.mailRafBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.my_email_copylink),
+        binding.mailRafBtn.setOnLongClickListener(v -> {
+            addOnClick(v, getString(R.string.my_email_copylink),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.mail_raf)));
             return true;
         });
 
-        binding.rateBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.vk_tabiin_coyplink),
+        binding.rateBtn.setOnLongClickListener(v -> {
+            addOnClick(v, getString(R.string.vk_tabiin_coyplink),
                     ClipData.newPlainText(getString(R.string.rateApp),
                             getString(R.string.tabiin)));
             return true;
         });
 
-        binding.vkGroupBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.vk_tabiin_coyplink),
+        binding.vkGroupBtn.setOnLongClickListener(v -> {
+            addOnClick(v, getString(R.string.vk_tabiin_coyplink),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.tabiin)));
             return true;
@@ -178,8 +178,18 @@ public class AppAboutFragment extends Fragment {
                     getString(R.string.tabiin_android_dev),
                     R.color.purple_300));
 
+        binding.settingsBtn.setOnClickListener(v -> {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.containerFragment, new SettingsFragment()).commit();
+        });
 
-        return binding.getRoot();
+    }
 
+    public void addOnClick(View view, String text, ClipData clipData) {
+        ClipboardManager clipboardManager = (ClipboardManager)
+                requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
+
+        clipboardManager.setPrimaryClip(clipData);
+        Snackbar.make(requireView(), text, Snackbar.LENGTH_LONG).show();
     }
 }

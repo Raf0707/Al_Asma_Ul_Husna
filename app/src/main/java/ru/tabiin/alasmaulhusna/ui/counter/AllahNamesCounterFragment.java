@@ -5,6 +5,8 @@ import static android.content.Context.MODE_PRIVATE;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
@@ -63,6 +65,14 @@ public class AllahNamesCounterFragment extends Fragment {
         salavatCounter = binding.salavatCounter;
         handler = new Handler();
         seekBar = binding.seekBar;
+
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -192,8 +202,6 @@ public class AllahNamesCounterFragment extends Fragment {
 
         loadPage();
         loadText();
-
-        return binding.getRoot();
     }
 
     public void initArabic() {

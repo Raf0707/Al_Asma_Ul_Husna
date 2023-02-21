@@ -2,6 +2,8 @@ package ru.tabiin.alasmaulhusna.ui.names;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,7 +43,7 @@ public class AllahNamesInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentAllahNamesInfoBinding.inflate(getLayoutInflater());
 
-        arabicName = new String[] {
+        arabicName = new String[]{
 
                 "للهُﷻ ",
                 "الرَّحْمَانُﷻ ",
@@ -145,7 +147,7 @@ public class AllahNamesInfoFragment extends Fragment {
 
         };
 
-        transcriptName = new String[] {
+        transcriptName = new String[]{
 
                 "",
                 "Ар-Рахман ",
@@ -249,7 +251,7 @@ public class AllahNamesInfoFragment extends Fragment {
 
         };
 
-        translateName = new String[] {
+        translateName = new String[]{
 
                 "Аллах",
                 "Милостивый",
@@ -278,7 +280,7 @@ public class AllahNamesInfoFragment extends Fragment {
                 "Возвеличивающий ",
                 "Ослабляющий ",
                 "Всеслышащий ",
-                "Всевидящий " ,
+                "Всевидящий ",
                 "Судья ",
                 "Справедливый ",
                 "Облегчающий ",
@@ -353,7 +355,7 @@ public class AllahNamesInfoFragment extends Fragment {
 
         };
 
-        infoName = new String[] {
+        infoName = new String[]{
                 getString(R.string.infoAllah),
                 getString(R.string.infoRahman),
                 getString(R.string.infoRahim),
@@ -470,6 +472,14 @@ public class AllahNamesInfoFragment extends Fragment {
         binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
         binding.nameDrawerInfo.setHasFixedSize(false);
 
+        return binding.getRoot();
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         binding.drawerListItem.addOnScrollListener(
                 new RecyclerView.OnScrollListener() {
                     @Override
@@ -486,7 +496,7 @@ public class AllahNamesInfoFragment extends Fragment {
             binding.drawerLayoutInfo.openDrawer(GravityCompat.START);
         });
 
-        return binding.getRoot();
+
     }
 
     public void init() {

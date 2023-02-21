@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -152,6 +154,14 @@ public class AllahNamesFragment extends Fragment {
         binding.nameDrawer.setAdapter(drawerNamesAdapter);
         binding.nameDrawer.setHasFixedSize(false);
 
+        return binding.getRoot();
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         binding.drawerListItem.addOnScrollListener(
                 new RecyclerView.OnScrollListener() {
                     @Override
@@ -167,8 +177,6 @@ public class AllahNamesFragment extends Fragment {
         binding.fabNames.setOnClickListener(v -> {
             binding.drawerLayout.openDrawer(GravityCompat.START);
         });
-
-        return binding.getRoot();
 
     }
 

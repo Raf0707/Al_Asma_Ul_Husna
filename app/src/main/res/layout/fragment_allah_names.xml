@@ -66,8 +66,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="end" >
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="24dp"
             android:id="@+id/arabicNameTextView"
+            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
@@ -80,8 +80,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start" >
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="24dp"
             android:id="@+id/nameDrawer"
+            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">

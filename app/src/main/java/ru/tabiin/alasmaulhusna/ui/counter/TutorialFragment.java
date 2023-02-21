@@ -20,8 +20,6 @@ public class TutorialFragment extends Fragment {
 
         binding = FragmentTutorialBinding.inflate(getLayoutInflater());
 
-
-
         binding.backGestureCounter.setOnClickListener(v -> {
             UtilFragment.changeFragment(requireActivity(),
                     new AllahNamesCounterFragment(),
