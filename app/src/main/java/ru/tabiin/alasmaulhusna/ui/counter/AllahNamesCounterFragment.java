@@ -20,6 +20,8 @@ import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesCounterBinding;
 import ru.tabiin.alasmaulhusna.util.OnSwipeTouchListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.concurrent.TimeUnit;
 
@@ -33,7 +35,6 @@ public class AllahNamesCounterFragment extends Fragment {
     private String[] textsArabic;
     private String[] textPage;
     private String[] textCount;
-    private String[] ya;
     private String[] save;
     private int currentPage = 0;
     private int currentCount = 0;
@@ -44,8 +45,10 @@ public class AllahNamesCounterFragment extends Fragment {
     private SeekBar seekBar;
     private Button back;
     private SharedPreferences sPref;
+
     private View vview;
 
+    private String selectMode = "Очистить текущий счетчик";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -679,6 +682,38 @@ public class AllahNamesCounterFragment extends Fragment {
                     loadText();
                     savePage();
                     loadPage();
+                })
+                .setNeutralButton("Отмена",
+                        (dialogInterface, i) ->
+                                dialogInterface.cancel())
+                .show();
+    }
+
+    public void onAlertSelect() {
+        saveText();
+        final String[] resetModes = {"текущий счетчик", "все счетчики"};
+        new MaterialAlertDialogBuilder(requireContext(),
+                R.style.AlertDialogTheme)
+                .setTitle("Обновить счетчик?")
+                .setSingleChoiceItems(resetModes, 0, (dialogInterface, i) -> {
+                    selectMode = resetModes[i];
+                    Snackbar.make(requireView(), "Вы обновили " + selectMode,
+                            BaseTransientBottomBar.LENGTH_SHORT).show();
+                })
+                .setPositiveButton("Да", (dialogInterface, i) -> {
+                    if (selectMode == resetModes[0]) {
+                        currentCount = 0;
+                        textCount[currentPage] = Integer.toString(currentCount);
+                        salavatCounter.setText(textCount[currentPage]);
+                        saveText();
+                        loadText();
+                        savePage();
+                        loadPage();
+                    } else if (selectMode == resetModes[1]) {
+                        for (int tp = 0; tp < 100; ++tp) {
+                            currentCount = 0;
+                        }
+                    }
                 })
                 .setNeutralButton("Отмена",
                         (dialogInterface, i) ->

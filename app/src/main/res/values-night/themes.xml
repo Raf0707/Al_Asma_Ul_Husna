@@ -99,4 +99,12 @@
         <item name="icon">@drawable/tabiin_icon_night</item>
     </style>
 
+    <style name="ColorGreenIce" parent="Theme.AlAsmaUlHusna" >
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="colorGreenIce" parent="Theme.AlAsmaUlHusna">
+        <item name="android:textAppearance">@style/ColorGreenIce</item>
+    </style>
+
 </resources>

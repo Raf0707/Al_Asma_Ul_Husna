@@ -92,11 +92,21 @@
         <item name="windowSplashScreenBackground">@color/md_theme_light_onSurfaceVariant</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/tabiin_about</item>
         <item name="windowSplashScreenAnimationDuration">3000</item>
+        <item name="android:textColor">@color/purple_300</item>
+        <item name="android:textAppearance">@style/ColorGreenIce</item>
         <item name="postSplashScreenTheme">@style/Theme.AlAsmaUlHusna</item>
     </style>
 
     <style name="ImageView.AboutApp" parent="Theme.AlAsmaUlHusna">
-        <item name="icon">@drawable/tabiin_about</item>
+        <item name="icon">@mipmap/ic_launcher_jpg</item>
+    </style>
+
+    <style name="ColorGreenIce" parent="Theme.AlAsmaUlHusna" >
+        <item name="android:textColor">@color/purple_300</item>
+    </style>
+
+    <style name="colorGreenIce" parent="Theme.AlAsmaUlHusna">
+        <item name="android:textAppearance">@style/ColorGreenIce</item>
     </style>
 
 </resources>
