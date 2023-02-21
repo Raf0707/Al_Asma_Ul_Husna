@@ -66,13 +66,6 @@ public class AllahNamesCounterFragment extends Fragment {
         handler = new Handler();
         seekBar = binding.seekBar;
 
-        return binding.getRoot();
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -202,6 +195,8 @@ public class AllahNamesCounterFragment extends Fragment {
 
         loadPage();
         loadText();
+
+        return binding.getRoot();
     }
 
     public void initArabic() {

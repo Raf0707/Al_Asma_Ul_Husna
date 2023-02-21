@@ -42,35 +42,35 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        allahNamesFragment = new AllahNamesFragment();
-        allahNamesInfoFragment = new AllahNamesInfoFragment();
-        allahNamesCounterFragment = new AllahNamesCounterFragment();
-        appAboutFragment = new AppAboutFragment();
+        //allahNamesFragment = new AllahNamesFragment();
+        //allahNamesInfoFragment = new AllahNamesInfoFragment();
+        //allahNamesCounterFragment = new AllahNamesCounterFragment();
+        //appAboutFragment = new AppAboutFragment();
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.containerFragment, allahNamesFragment).commit();
+                .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
 
 
         binding.bottomNavView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.allahNames:
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, allahNamesFragment).commit();
+                            .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
                     return true;
 
                 case R.id.allahNamesInfo:
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, allahNamesInfoFragment).commit();
+                            .replace(R.id.containerFragment, new AllahNamesInfoFragment()).commit();
                     return true;
 
                 case R.id.counterAllahNames:
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, allahNamesCounterFragment).commit();
+                            .replace(R.id.containerFragment, new AllahNamesCounterFragment()).commit();
                     return true;
 
                 case R.id.about_app:
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, appAboutFragment).commit();
+                            .replace(R.id.containerFragment, new AppAboutFragment()).commit();
                     return true;
             }
             return false;

@@ -154,14 +154,6 @@ public class AllahNamesFragment extends Fragment {
         binding.nameDrawer.setAdapter(drawerNamesAdapter);
         binding.nameDrawer.setHasFixedSize(false);
 
-        return binding.getRoot();
-
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
         binding.drawerListItem.addOnScrollListener(
                 new RecyclerView.OnScrollListener() {
                     @Override
@@ -172,11 +164,13 @@ public class AllahNamesFragment extends Fragment {
                             binding.fabNames.hide();
                     }
                 }
-            );
+        );
 
         binding.fabNames.setOnClickListener(v -> {
             binding.drawerLayout.openDrawer(GravityCompat.START);
         });
+
+        return binding.getRoot();
 
     }
 

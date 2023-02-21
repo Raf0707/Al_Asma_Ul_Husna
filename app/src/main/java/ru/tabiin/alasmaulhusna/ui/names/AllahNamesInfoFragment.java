@@ -459,9 +459,7 @@ public class AllahNamesInfoFragment extends Fragment {
 
         ctx = new WeakReference<>(this);
 
-        initName();
-        init();
-        initDrawer();
+
 
         //namesAdapter = new NamesAdapter(requireActivity(), names);
         namesInfoAdapter = new NamesInfoAdapter(requireActivity(), namesInfo);
@@ -472,13 +470,9 @@ public class AllahNamesInfoFragment extends Fragment {
         binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
         binding.nameDrawerInfo.setHasFixedSize(false);
 
-        return binding.getRoot();
-
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        initName();
+        init();
+        initDrawer();
 
         binding.drawerListItem.addOnScrollListener(
                 new RecyclerView.OnScrollListener() {
@@ -496,7 +490,7 @@ public class AllahNamesInfoFragment extends Fragment {
             binding.drawerLayoutInfo.openDrawer(GravityCompat.START);
         });
 
-
+        return binding.getRoot();
     }
 
     public void init() {
