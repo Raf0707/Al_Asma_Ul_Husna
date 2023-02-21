@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/minSdkVersion-22-green.svg">
   </a>
   <a href="https://apps.rustore.ru/app/com.example.alasmaulhusna" style="text-decoration:none" area-label="RuStore">
-    <img src="https://img.shields.io/amo/dw/234?color=brightgreen&label=RuStore&logo=R&logoColor=brightgreen&style=social">
+    <img src="https://img.shields.io/badge/Download-RuStore-green">
   </a>
   <a href="https://github.com/Raf0707/Al_Asma_Ul_Husna/blob/master/LICENSE.md" style="text-decoration:none" area-label="License: Apache License 2.0">
     <img src="https://img.shields.io/badge/License-Apache License 2.0-blue.svg">
