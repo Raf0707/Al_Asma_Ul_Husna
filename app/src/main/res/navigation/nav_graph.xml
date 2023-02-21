@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allahNamesFragment">
+
+    <fragment
+        android:id="@+id/allahNamesFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment"
+        android:label="fragment_allah_names"
+        tools:layout="@layout/fragment_allah_names" >
+        <action
+            android:id="@+id/action_allahNamesFragment_to_appAboutFragment2"
+            app:destination="@id/appAboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allahNamesCounterFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.counter.AllahNamesCounterFragment"
+        android:label="fragment_allah_names_counter"
+        tools:layout="@layout/fragment_allah_names_counter" >
+        <action
+            android:id="@+id/action_allahNamesCounterFragment_to_tutorialFragment3"
+            app:destination="@id/tutorialFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/appAboutFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.about_app.AppAboutFragment"
+        android:label="fragment_app_about"
+        tools:layout="@layout/fragment_app_about" >
+        <action
+            android:id="@+id/action_appAboutFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/allahNamesInfoFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment"
+        android:label="fragment_allah_names_info"
+        tools:layout="@layout/fragment_allah_names_info" />
+    <fragment
+        android:id="@+id/tutorialFragment3"
+        android:name="ru.tabiin.alasmaulhusna.ui.counter.TutorialFragment"
+        android:label="fragment_tutorial"
+        tools:layout="@layout/fragment_tutorial" />
+
+</navigation>
