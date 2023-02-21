@@ -21,6 +21,7 @@ import ru.tabiin.alasmaulhusna.BuildConfig;
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentAppAboutBinding;
 import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
+import ru.tabiin.alasmaulhusna.util.BugReportHelper;
 import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -182,6 +183,8 @@ public class AppAboutFragment extends Fragment {
             getFragmentManager().beginTransaction()
                     .replace(R.id.containerFragment, new SettingsFragment()).commit();
         });
+
+        binding.bugReport.setOnClickListener(v -> BugReportHelper.sendEmail(getActivity()));
 
     }
 

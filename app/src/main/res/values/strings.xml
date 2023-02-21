@@ -41,6 +41,9 @@
     <string name="email_client">Send email using...</string>
     <string name="no_email_client">No email clients installed.</string>
     <string name="semicolon">\; \</string>
+    <string name="report_a_bug">Report a bug</string>
+    <string name="bug_report" translatable="false">Bug Report</string>
+    <string name="not_installed_email_client">E-mail client not installed</string>
     <string name="Gradle_build">\Gradle build finished in \</string>
     <string name="Apply_changes">Changes Apply Sucscessfully!</string>
     <string name="Debug_finish">\Android App Tabiin finished  Debug in \</string>
