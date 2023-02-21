@@ -18,8 +18,7 @@
         android:id="@+id/bottomNavView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemIconTint="@drawable/icon_color"
-        app:itemTextColor="@drawable/icon_color"
+
         android:layout_alignParentBottom="true"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
         app:itemIconSize="42dp"
