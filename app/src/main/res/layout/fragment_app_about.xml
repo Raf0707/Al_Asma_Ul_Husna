@@ -37,8 +37,9 @@
                         android:src="@drawable/tabiin_about" />
 
                     <LinearLayout
-                        android:layout_width="240dp"
+                        android:layout_width="200dp"
                         android:layout_height="120dp"
+                        android:layout_marginRight="15dp"
                         android:layout_gravity="center|center_vertical"
                         android:orientation="vertical"
                         android:padding="8dp">
@@ -48,6 +49,7 @@
                             android:layout_height="50dp"
                             android:gravity="center"
                             android:text="Al Asma Ul Husna"
+                            android:layout_marginRight="15dp"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -56,6 +58,7 @@
                             android:layout_height="50dp"
                             android:gravity="center"
                             android:text="@string/from_tabiin"
+                            android:layout_marginRight="15dp"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>

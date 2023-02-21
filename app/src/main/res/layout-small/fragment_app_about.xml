@@ -48,7 +48,7 @@
                             android:layout_height="50dp"
                             android:gravity="center"
                             android:text="Al Asma Ul Husna"
-                            android:textSize="24sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -56,7 +56,7 @@
                             android:layout_height="50dp"
                             android:gravity="center"
                             android:text="@string/from_tabiin"
-                            android:textSize="24sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
