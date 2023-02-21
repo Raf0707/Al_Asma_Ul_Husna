@@ -681,7 +681,7 @@ public class AllahNamesCounterFragment extends Fragment {
         new MaterialAlertDialogBuilder(requireContext(),
                 R.style.AlertDialogTheme)
                 .setTitle("Reset")
-                .setMessage("Очистить счетчик?")
+                .setMessage("Обновить счетчик?")
                 .setPositiveButton("Да", (dialogInterface, i) -> {
                     currentCount = 0;
                     textCount[currentPage] = Integer.toString(currentCount);
