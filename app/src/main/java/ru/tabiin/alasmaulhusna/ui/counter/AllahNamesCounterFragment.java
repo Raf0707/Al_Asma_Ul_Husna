@@ -59,7 +59,7 @@ public class AllahNamesCounterFragment extends Fragment {
 
         View view = binding.getRoot();
 
-        myLayout = binding.myLayout;
+        myLayout = binding.counterAllahNames;
         arabic = binding.arabic;
         page = binding.page;
         salavatCounter = binding.salavatCounter;

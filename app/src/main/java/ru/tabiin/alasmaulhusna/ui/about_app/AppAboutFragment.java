@@ -43,6 +43,7 @@ public class AppAboutFragment extends Fragment {
 
         binding = FragmentAppAboutBinding
                 .inflate(getLayoutInflater());
+
         return binding.getRoot();
     }
 

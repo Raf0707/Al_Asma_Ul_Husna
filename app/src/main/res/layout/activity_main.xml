@@ -7,13 +7,6 @@
     android:layout_height="match_parent"
     tools:context="ru.tabiin.alasmaulhusna.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/containerFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="80dp">
-    </FrameLayout>
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
         android:layout_width="match_parent"
@@ -27,6 +20,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/nav_menu">
+
+    <FrameLayout
+        android:id="@+id/containerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp">
+    </FrameLayout>
+
+
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 

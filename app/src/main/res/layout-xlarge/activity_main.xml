@@ -18,10 +18,9 @@
         android:id="@+id/bottomNavView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-        app:itemIconSize="42dp"
+        app:itemIconSize="32dp"
         app:layout_anchorGravity="bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
