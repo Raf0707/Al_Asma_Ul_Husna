@@ -131,6 +131,7 @@ public class AppAboutFragment extends Fragment {
                         getString(R.string.rafail_url),
                         R.color.purple_300));
 
+
         binding.mailRafBtn.setOnClickListener(v -> {
             final Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.setData(Uri.parse(getString(R.string.mailto)))
@@ -162,6 +163,8 @@ public class AppAboutFragment extends Fragment {
                         R.string.no_email_client, Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         binding.rateBtn.setOnClickListener(v -> new CustomTabUtil()
             .openCustomTab(getActivity(),
@@ -200,6 +203,10 @@ public class AppAboutFragment extends Fragment {
 
         binding.donateBtn.setOnClickListener(v -> new CustomTabUtil().openCustomTab(getActivity(),
                 "https://www.donationalerts.com/r/raf0707", R.color.md_theme_light_onSecondary));
+
+        binding.tgGroupBtn.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(), "https://t.me/+Lkw3ON0EsjZlNDIy",
+                        R.color.md_theme_light_onSecondary));
 
     }
 
