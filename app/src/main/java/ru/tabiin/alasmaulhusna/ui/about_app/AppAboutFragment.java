@@ -44,17 +44,20 @@ public class AppAboutFragment extends Fragment {
 
     private FragmentAppAboutBinding binding;
     private int clickCount = 0;
-    public static String selectTheme = "dark";
+    public static String selectTheme = "system";
 
     private SharedPreferences sPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*
         if (savedInstanceState != null) {
             selectTheme = savedInstanceState.getString("theme");
             loadTheme(selectTheme);
         }
+
+         */
     }
 
     @SuppressLint("IntentReset")
@@ -242,6 +245,7 @@ public class AppAboutFragment extends Fragment {
                     if (selectTheme == resetModes[0]) {
                         AppCompatDelegate.setDefaultNightMode(
                                 AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        /*
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.followSystemNightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 0);
                         if (AppCompatDelegate.getDefaultNightMode() ==
@@ -254,24 +258,32 @@ public class AppAboutFragment extends Fragment {
                         }
 
                         saveTheme(selectTheme);
+
+                         */
                         requireActivity().recreate();
 
                     } else if (selectTheme == resetModes[1]) {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        /*
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
                         binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
                                 R.drawable.baseline_nightl_24));
                         saveTheme(selectTheme);
+
+                         */
                         requireActivity().recreate();
 
                     } else if (selectTheme == resetModes[2]) {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        /*
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
                         binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
                                 R.drawable.baseline_sunny_24));
                         saveTheme(selectTheme);
+
+                         */
                         requireActivity().recreate();
 
                     }
@@ -320,37 +332,39 @@ public class AppAboutFragment extends Fragment {
                 SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 0);
                 if (AppCompatDelegate.getDefaultNightMode() ==
                         AppCompatDelegate.MODE_NIGHT_YES) {
-                    binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
+                    binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                             R.drawable.baseline_nightl_24));
                 } else {
-                    binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
+                    binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                             R.drawable.baseline_sunny_24));
                 }
 
-                saveTheme(selectTheme);
+                //saveTheme(selectTheme);
                 requireActivity().recreate();
 
             } else if (selectTheme.equals("dark")) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
                 SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
-                binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
+                binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                         R.drawable.baseline_nightl_24));
-                saveTheme(selectTheme);
+                //saveTheme(selectTheme);
                 requireActivity().recreate();
 
             } else if (selectTheme.equals("light")) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
                 SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
-                binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
+                binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                         R.drawable.baseline_sunny_24));
-                saveTheme(selectTheme);
+                //saveTheme(selectTheme);
                 requireActivity().recreate();
 
             }
         }
     }
+
+    /*
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putString("theme", selectTheme);
@@ -367,4 +381,6 @@ public class AppAboutFragment extends Fragment {
         saveTheme(selectTheme);
         super.onDestroy();
     }
+
+     */
 }
