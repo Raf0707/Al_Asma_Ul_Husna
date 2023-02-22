@@ -44,16 +44,16 @@ If you have any feature suggestions, please create an issue with detailed inform
 ___
 
 ## 🔗 Social links
-**Telegram channel**: https://t.me/+Lkw3ON0EsjZlNDIy
-**Telegram group**: https://t.me/+piqy_5XsV1Q2YTZi
-**Telegram group**: https://t.me/+QTIZZFhT__ZjMmFi
-**VK group: https**://vk.com/public213851453
-**VK chat: https**://vk.me/join/iUcAiwD_m9cPQRCV2Yikjt4SjHiDYzjrN3k=
-**VK chat: https**://vk.me/join/05C90PnTAJ6W_pmmccpIwlzZbpHAX1SgcG0=
-**VK chat для братьев**: https://vk.me/join/NanAjNGi34t9Hk6Oopvo524ZDqgx2rfn_VE=
-**VK chat для сестер**: https://vk.me/join/AJQ1dxg4UyUz6n6oz7_EGIke
-**VK chat общий**: https://vk.me/join/6y9zEQ8OHDbqbRs8A9ujohbPtG2xZjCS/UQ=
-**Crowdin**: https://crowdin.com/project/al-asma-ul-husna <br>
+**Telegram channel:** https://t.me/+Lkw3ON0EsjZlNDIy
+**Telegram group:** https://t.me/+piqy_5XsV1Q2YTZi
+**Telegram group:** https://t.me/+QTIZZFhT__ZjMmFi
+**VK group:** https://vk.com/public213851453
+**VK chat:** https://vk.me/join/iUcAiwD_m9cPQRCV2Yikjt4SjHiDYzjrN3k=
+**VK chat:** https://vk.me/join/05C90PnTAJ6W_pmmccpIwlzZbpHAX1SgcG0=
+**VK chat для братьев:** https://vk.me/join/NanAjNGi34t9Hk6Oopvo524ZDqgx2rfn_VE=
+**VK chat для сестер:** https://vk.me/join/AJQ1dxg4UyUz6n6oz7_EGIke
+**VK chat общий:** https://vk.me/join/6y9zEQ8OHDbqbRs8A9ujohbPtG2xZjCS/UQ=
+**Crowdin:** https://crowdin.com/project/al-asma-ul-husna <br>
 
 ## 🌐 Internet
 you don't need an internet connection to use this app
