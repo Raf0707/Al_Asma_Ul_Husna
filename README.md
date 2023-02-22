@@ -50,7 +50,10 @@ ___
 **VK group:** https://vk.com/public213851453 <br>
 **VK chat:** https://vk.me/join/iUcAiwD_m9cPQRCV2Yikjt4SjHiDYzjrN3k= <br>
 **VK chat:** https://vk.me/join/05C90PnTAJ6W_pmmccpIwlzZbpHAX1SgcG0= <br>
-**Crowdin**: https://crowdin.com/project/al-asma-ul-husna <br>
+**VK chat male:** https://vk.me/join/NanAjNGi34t9Hk6Oopvo524ZDqgx2rfn_VE= <br>
+**VK chat female:** https://vk.me/join/AJQ1dxg4UyUz6n6oz7_EGIke <br>
+**VK chat general:** https://vk.me/join/6y9zEQ8OHDbqbRs8A9ujohbPtG2xZjCS/UQ= <br>
+**Crowdin:** https://crowdin.com/project/al-asma-ul-husna <br>
 
 ## 🌐 Internet
 you don't need an internet connection to use this app
