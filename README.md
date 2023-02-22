@@ -50,9 +50,9 @@ ___
 **VK group:** https://vk.com/public213851453
 **VK chat:** https://vk.me/join/iUcAiwD_m9cPQRCV2Yikjt4SjHiDYzjrN3k=
 **VK chat:** https://vk.me/join/05C90PnTAJ6W_pmmccpIwlzZbpHAX1SgcG0=
-**VK chat для братьев:** https://vk.me/join/NanAjNGi34t9Hk6Oopvo524ZDqgx2rfn_VE=
-**VK chat для сестер:** https://vk.me/join/AJQ1dxg4UyUz6n6oz7_EGIke
-**VK chat общий:** https://vk.me/join/6y9zEQ8OHDbqbRs8A9ujohbPtG2xZjCS/UQ=
+**VK chat male:** https://vk.me/join/NanAjNGi34t9Hk6Oopvo524ZDqgx2rfn_VE=
+**VK chat female:** https://vk.me/join/AJQ1dxg4UyUz6n6oz7_EGIke
+**VK chat general:** https://vk.me/join/6y9zEQ8OHDbqbRs8A9ujohbPtG2xZjCS/UQ=
 **Crowdin:** https://crowdin.com/project/al-asma-ul-husna <br>
 
 ## 🌐 Internet
