@@ -9,6 +9,7 @@ import com.google.android.material.color.DynamicColors;
 import ru.tabiin.alasmaulhusna.util.SharedPreferencesUtils;
 
 public class App extends Application {
+    /*
     private static App instance = null;
 
     public static App getInstance() {
@@ -26,17 +27,19 @@ public class App extends Application {
         switch (nightMode) {
             case 0:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                break;
+                return;
             case 1:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
+                return;
             case 2:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
+                return;
         }
 
         if (!SharedPreferencesUtils.getBoolean(this, "useDynamicColors")) {
             DynamicColors.applyToActivitiesIfAvailable(this);
         }
     }
+
+     */
 }

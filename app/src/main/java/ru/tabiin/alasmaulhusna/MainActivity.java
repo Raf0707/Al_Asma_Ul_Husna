@@ -2,6 +2,7 @@ package ru.tabiin.alasmaulhusna;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private AllahNamesInfoFragment allahNamesInfoFragment;
     private AllahNamesCounterFragment allahNamesCounterFragment;
     private AppAboutFragment appAboutFragment;
+    private Fragment activeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,35 +44,54 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        //allahNamesFragment = new AllahNamesFragment();
-        //allahNamesInfoFragment = new AllahNamesInfoFragment();
-        //allahNamesCounterFragment = new AllahNamesCounterFragment();
-        //appAboutFragment = new AppAboutFragment();
+        allahNamesFragment = new AllahNamesFragment();
+        allahNamesInfoFragment = new AllahNamesInfoFragment();
+        allahNamesCounterFragment = new AllahNamesCounterFragment();
+        appAboutFragment = new AppAboutFragment();
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.containerFragment, new AllahNamesFragment())
+                .add(R.id.containerFragment, new AllahNamesInfoFragment())
+                .add(R.id.containerFragment, new AllahNamesCounterFragment())
+                .add(R.id.containerFragment, new AppAboutFragment());
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
+        activeFragment = allahNamesFragment;
 
 
         binding.bottomNavView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.allahNames:
                     getSupportFragmentManager().beginTransaction()
+                            .hide(activeFragment)
+                            .show(new AllahNamesFragment())
                             .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
+                    activeFragment = allahNamesFragment;
                     return true;
 
                 case R.id.allahNamesInfo:
                     getSupportFragmentManager().beginTransaction()
+                            .hide(activeFragment)
+                            .show(new AllahNamesInfoFragment())
                             .replace(R.id.containerFragment, new AllahNamesInfoFragment()).commit();
+                    activeFragment = allahNamesInfoFragment;
                     return true;
 
                 case R.id.counterAllahNames:
                     getSupportFragmentManager().beginTransaction()
+                            .hide(activeFragment)
+                            .show(new AllahNamesCounterFragment())
                             .replace(R.id.containerFragment, new AllahNamesCounterFragment()).commit();
+                    activeFragment = allahNamesCounterFragment;
                     return true;
 
                 case R.id.about_app:
                     getSupportFragmentManager().beginTransaction()
+                            .hide(activeFragment)
+                            .show(new AppAboutFragment())
                             .replace(R.id.containerFragment, new AppAboutFragment()).commit();
+                    activeFragment = appAboutFragment;
                     return true;
             }
             return false;

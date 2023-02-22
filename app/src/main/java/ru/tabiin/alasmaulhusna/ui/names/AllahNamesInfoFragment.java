@@ -511,4 +511,11 @@ public class AllahNamesInfoFragment extends Fragment {
             namesDrawer.add(new DrawerNamesContent(i));
         }
     }
+
+    @NonNull
+    public Bundle saveState() {
+        Bundle bundle = new Bundle();
+
+        return bundle;
+    }
 }

@@ -91,6 +91,19 @@
                         app:icon="@drawable/ic_baseline_code_24"
                         app:iconPadding="16dp"
                         app:iconSize="24dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/donateBtn"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Поддержать автора"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        app:icon="@drawable/baseline_donate_on_24"
+                        app:iconPadding="16dp"
+                        app:iconSize="24dp" />
+
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -187,16 +200,18 @@
                         style="@style/Widget.Material3.Button.TextButton" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/settingsBtn"
+                        android:id="@+id/themesBtn"
+                        style="@style/Widget.Material3.Button.TextButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Настройки"
-                        android:textSize="20sp"
-                        app:icon="@drawable/baseline_settings_24"
-                        app:iconPadding="16dp"
-                        app:iconSize="24dp"
+                        android:text="Сменить тему"
                         android:textAlignment="textStart"
-                        style="@style/Widget.Material3.Button.TextButton" />
+                        android:textSize="20sp"
+                        app:icon="@drawable/baseline_sunny_24"
+                        android:onClick="buttonPressed"
+                        app:iconPadding="16dp"
+                        app:iconSize="24dp" />
+
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

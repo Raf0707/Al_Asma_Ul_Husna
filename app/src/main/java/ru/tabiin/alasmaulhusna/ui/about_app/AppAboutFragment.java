@@ -5,6 +5,9 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +17,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import ru.tabiin.alasmaulhusna.BuildConfig;
 
@@ -23,6 +28,10 @@ import ru.tabiin.alasmaulhusna.databinding.FragmentAppAboutBinding;
 import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
 import ru.tabiin.alasmaulhusna.util.BugReportHelper;
 import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
+import ru.tabiin.alasmaulhusna.util.SharedPreferencesUtils;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 
@@ -30,6 +39,7 @@ public class AppAboutFragment extends Fragment {
 
     private FragmentAppAboutBinding binding;
     private int clickCount = 0;
+    private String selectTheme = "system";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -180,12 +190,16 @@ public class AppAboutFragment extends Fragment {
                     getString(R.string.tabiin_android_dev),
                     R.color.purple_300));
 
-        binding.settingsBtn.setOnClickListener(v -> {
-            getFragmentManager().beginTransaction()
-                    .replace(R.id.containerFragment, new SettingsFragment()).commit();
+        binding.themesBtn.setOnClickListener(v -> {
+            onMaterialChangeTheme();
+            //getFragmentManager().beginTransaction()
+                   // .replace(R.id.containerFragment, new SettingsFragment()).commit();
         });
 
         binding.bugReport.setOnClickListener(v -> BugReportHelper.sendEmail(getActivity()));
+
+        binding.donateBtn.setOnClickListener(v -> new CustomTabUtil().openCustomTab(getActivity(),
+                "https://www.donationalerts.com/r/raf0707", R.color.md_theme_light_onSecondary));
 
     }
 
@@ -195,5 +209,47 @@ public class AppAboutFragment extends Fragment {
 
         clipboardManager.setPrimaryClip(clipData);
         Snackbar.make(requireView(), text, Snackbar.LENGTH_LONG).show();
+    }
+
+    public void onMaterialChangeTheme() {
+        final String[] resetModes = {"system", "dark", "light"};
+        new MaterialAlertDialogBuilder(requireContext(),
+                R.style.AlertDialogTheme)
+                .setTitle("Сменить тему?")
+                .setSingleChoiceItems(resetModes, 0, (dialogInterface, i) -> {
+                    selectTheme = resetModes[i];
+                })
+                .setPositiveButton("Да", (dialogInterface, i) -> {
+
+                    if (selectTheme == resetModes[0]) {
+                        AppCompatDelegate.setDefaultNightMode(
+                                AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        if (AppCompatDelegate.getDefaultNightMode() ==
+                                AppCompatDelegate.MODE_NIGHT_YES) {
+                            binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                                    R.drawable.baseline_nightl_24));
+                        } else {
+                            binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                                    R.drawable.baseline_sunny_24));
+                        }
+                    } else if (selectTheme == resetModes[1]) {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                                R.drawable.baseline_nightl_24));
+                    } else if (selectTheme == resetModes[2]) {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                                R.drawable.baseline_sunny_24));
+                    }
+
+                    Snackbar.make(requireView(), "Вы выбрали " + selectTheme,
+                            BaseTransientBottomBar.LENGTH_SHORT).show();
+
+
+                })
+                .setNeutralButton("Отмена",
+                        (dialogInterface, i) ->
+                                dialogInterface.cancel())
+                .show();
     }
 }
