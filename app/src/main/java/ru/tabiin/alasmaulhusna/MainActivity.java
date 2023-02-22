@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private AllahNamesCounterFragment allahNamesCounterFragment;
     private AppAboutFragment appAboutFragment;
     private Fragment activeFragment;
+    private Fragment lastFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,5 +98,15 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }

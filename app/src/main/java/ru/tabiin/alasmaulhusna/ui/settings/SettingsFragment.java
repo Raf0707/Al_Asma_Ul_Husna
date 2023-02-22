@@ -49,7 +49,7 @@ public class SettingsFragment extends Fragment {
                 case R.id.noNightModeRadioButton:
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
-                    SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
+                    SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
                     getFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
                     requireActivity().recreate();
@@ -57,7 +57,7 @@ public class SettingsFragment extends Fragment {
                 case R.id.nightModeRadioButton:
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
-                    SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
+                    SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
                     getFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
                     requireActivity().recreate();

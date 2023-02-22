@@ -9,7 +9,7 @@ import com.google.android.material.color.DynamicColors;
 import ru.tabiin.alasmaulhusna.util.SharedPreferencesUtils;
 
 public class App extends Application {
-    /*
+
     private static App instance = null;
 
     public static App getInstance() {
@@ -41,5 +41,5 @@ public class App extends Application {
         }
     }
 
-     */
+
 }
