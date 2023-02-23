@@ -13,6 +13,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,11 +31,13 @@ import ru.tabiin.alasmaulhusna.BuildConfig;
 
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentAppAboutBinding;
+import ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment;
 import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
 import ru.tabiin.alasmaulhusna.util.BugReportHelper;
 import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
 import ru.tabiin.alasmaulhusna.util.SharedPreferencesUtils;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
@@ -43,7 +46,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class AppAboutFragment extends Fragment {
 
     private FragmentAppAboutBinding binding;
-    private int clickCount = 0;
+    private int iconId;
     public static String selectTheme = "system";
 
     private SharedPreferences sPref;
@@ -51,13 +54,14 @@ public class AppAboutFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*
+
         if (savedInstanceState != null) {
             selectTheme = savedInstanceState.getString("theme");
+            //iconId = savedInstanceState.getInt("iconTheme");
             loadTheme(selectTheme);
+            //binding.themesBtn.setIcon(getResources().getDrawable(iconId));
+            Log.d("onCreate", "load " + selectTheme);
         }
-
-         */
     }
 
     @SuppressLint("IntentReset")
@@ -192,25 +196,12 @@ public class AppAboutFragment extends Fragment {
                         R.color.purple_300));
 
         binding.otherAppsBtn.setOnClickListener(v -> new CustomTabUtil()
-            /*
-            final String appPackageName = requireContext().getPackageName();
-
-            try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:JVMFrog")));
-            } catch (android.content.ActivityNotFoundException anfe) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.GOOGLE_PLAY))));
-            }
-            vk.com/@tabiin_muslim_planner-tabiin-android-development
-             */
-
             .openCustomTab(getActivity(),
                     getString(R.string.tabiin_android_dev),
                     R.color.purple_300));
 
         binding.themesBtn.setOnClickListener(v -> {
             onMaterialChangeTheme();
-            //getFragmentManager().beginTransaction()
-                   // .replace(R.id.containerFragment, new SettingsFragment()).commit();
         });
 
         binding.bugReport.setOnClickListener(v -> BugReportHelper.sendEmail(getActivity()));
@@ -234,6 +225,7 @@ public class AppAboutFragment extends Fragment {
 
     public void onMaterialChangeTheme() {
         final String[] resetModes = {"system", "dark", "light"};
+        Bundle bundle = new Bundle();
         new MaterialAlertDialogBuilder(requireContext(),
                 R.style.AlertDialogTheme)
                 .setTitle("Сменить тему?")
@@ -245,47 +237,43 @@ public class AppAboutFragment extends Fragment {
                     if (selectTheme == resetModes[0]) {
                         AppCompatDelegate.setDefaultNightMode(
                                 AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                        /*
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.followSystemNightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 0);
                         if (AppCompatDelegate.getDefaultNightMode() ==
                                 AppCompatDelegate.MODE_NIGHT_YES) {
-                            binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
+                            binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                                     R.drawable.baseline_nightl_24));
+                            bundle.putInt("iconTheme", R.drawable.baseline_nightl_24);
                         } else {
-                            binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
+                            binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                                     R.drawable.baseline_sunny_24));
+                            bundle.putInt("iconTheme", R.drawable.baseline_sunny_24);
                         }
 
                         saveTheme(selectTheme);
-
-                         */
                         requireActivity().recreate();
 
                     } else if (selectTheme == resetModes[1]) {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                        /*
-                        SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
-                        SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
-                        binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
-                                R.drawable.baseline_nightl_24));
-                        saveTheme(selectTheme);
 
-                         */
+                        SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
+                        SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
+                        binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                                R.drawable.baseline_nightl_24));
+                        bundle.putInt("iconTheme", R.drawable.baseline_nightl_24);
+                        saveTheme(selectTheme);
                         requireActivity().recreate();
 
                     } else if (selectTheme == resetModes[2]) {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                        /*
+
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
-                        SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
-                        binding.themesBtn.setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
+                        SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
+                        binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                                 R.drawable.baseline_sunny_24));
+                        bundle.putInt("iconTheme", R.drawable.baseline_sunny_24);
                         saveTheme(selectTheme);
-
-                         */
                         requireActivity().recreate();
-
                     }
 
                     Snackbar.make(requireView(), "Вы выбрали " + selectTheme,
@@ -298,19 +286,6 @@ public class AppAboutFragment extends Fragment {
                         (dialogInterface, i) ->
                                 dialogInterface.cancel())
                 .show();
-    }
-
-    public void saveText() {
-        sPref = getActivity().getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor ed = sPref.edit();
-        ed.putString("theme_s", selectTheme);
-        ed.apply();
-    }
-
-    public void loadText() {
-        sPref = getActivity().getPreferences(MODE_PRIVATE);
-        String th = sPref.getString("theme_s", selectTheme);
-        selectTheme = th;
     }
 
     public void saveTheme(String selectTheme) {
@@ -328,12 +303,12 @@ public class AppAboutFragment extends Fragment {
             if (selectTheme.equals("system")) {
                 AppCompatDelegate.setDefaultNightMode(
                         AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.followSystemNightModeRadioButton);
-                SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 0);
+
                 if (AppCompatDelegate.getDefaultNightMode() ==
                         AppCompatDelegate.MODE_NIGHT_YES) {
                     binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                             R.drawable.baseline_nightl_24));
+
                 } else {
                     binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                             R.drawable.baseline_sunny_24));
@@ -344,8 +319,6 @@ public class AppAboutFragment extends Fragment {
 
             } else if (selectTheme.equals("dark")) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
-                SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
                 binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                         R.drawable.baseline_nightl_24));
                 //saveTheme(selectTheme);
@@ -353,8 +326,6 @@ public class AppAboutFragment extends Fragment {
 
             } else if (selectTheme.equals("light")) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
-                SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
                 binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
                         R.drawable.baseline_sunny_24));
                 //saveTheme(selectTheme);
@@ -364,23 +335,26 @@ public class AppAboutFragment extends Fragment {
         }
     }
 
-    /*
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putString("theme", selectTheme);
+        Log.d("onSaveInstanceState", "save " + selectTheme);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        Log.d("onViewStateRestored", "restore " + selectTheme);
         super.onViewStateRestored(savedInstanceState);
     }
 
     @Override
     public void onDestroy() {
         saveTheme(selectTheme);
+        Log.d("onDestroy", "save " + selectTheme);
         super.onDestroy();
     }
 
-     */
+
 }
