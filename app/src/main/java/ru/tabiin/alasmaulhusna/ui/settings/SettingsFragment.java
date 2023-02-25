@@ -25,7 +25,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentSettingsBinding.inflate(inflater, container,false);
-        //binding.dynamicColorsSwitch.setEnabled(DynamicColors.isDynamicColorAvailable());
+        binding.dynamicColorsSwitch.setEnabled(DynamicColors.isDynamicColorAvailable());
         binding.dynamicColorsSwitch.setChecked(SharedPreferencesUtils.getBoolean(requireContext(), "useDynamicColors"));
         return binding.getRoot();
     }
@@ -41,8 +41,6 @@ public class SettingsFragment extends Fragment {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                     SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.followSystemNightModeRadioButton);
                     SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 0);
-                    getFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
                     requireActivity().recreate();
 
                     return;
@@ -50,24 +48,25 @@ public class SettingsFragment extends Fragment {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
                     SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
-                    getFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
                     requireActivity().recreate();
                     return;
                 case R.id.nightModeRadioButton:
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
                     SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
-                    getFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
                     requireActivity().recreate();
                     return;
             }
         });
 
+
         binding.dynamicColorsSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            DynamicColors.applyToActivitiesIfAvailable(getActivity().getApplication());
+            DynamicColors.applyToActivitiesIfAvailable(getActivity().getApplication(),
+                    R.style.Theme_AlAsmaUlHusna);
             SharedPreferencesUtils.saveBoolean(requireContext(), "useDynamicColors", isChecked);
         });
+
     }
 
     @Override

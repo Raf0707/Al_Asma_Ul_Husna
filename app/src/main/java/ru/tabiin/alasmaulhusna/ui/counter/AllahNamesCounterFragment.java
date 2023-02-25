@@ -187,11 +187,20 @@ public class AllahNamesCounterFragment extends Fragment {
             }
         });
 
+        /*
         binding.openTutorialBtn.setOnClickListener(view1 -> UtilFragment.changeFragment(requireActivity(),
                 new TutorialFragment(),
                 R.id.containerFragment,
                 savedInstanceState
         ));
+
+         */
+
+        binding.openTutorialBtn.setOnClickListener(v -> {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.containerFragment, new TutorialFragment())
+                    .commit();
+        });
 
         loadPage();
         loadText();

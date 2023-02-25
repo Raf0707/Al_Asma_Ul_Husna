@@ -33,5 +33,14 @@
         android:id="@+id/appAboutFragment"
         android:name="ru.tabiin.alasmaulhusna.ui.about_app.AppAboutFragment"
         android:label="fragment_app_about"
-        tools:layout="@layout/fragment_app_about" />
+        tools:layout="@layout/fragment_app_about" >
+        <action
+            android:id="@+id/action_appAboutFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

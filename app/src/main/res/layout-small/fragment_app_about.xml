@@ -109,6 +109,18 @@
                                 app:iconSize="24dp" />
 
                             <com.google.android.material.button.MaterialButton
+                                android:id="@+id/settingsBtn"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Настройки"
+                                android:textAlignment="textStart"
+                                android:textSize="20sp"
+                                app:icon="@drawable/baseline_settings_24"
+                                app:iconPadding="16dp"
+                                app:iconSize="24dp" />
+
+                            <com.google.android.material.button.MaterialButton
                                 android:id="@+id/donateBtn"
                                 style="@style/Widget.Material3.Button.TextButton"
                                 android:layout_width="match_parent"

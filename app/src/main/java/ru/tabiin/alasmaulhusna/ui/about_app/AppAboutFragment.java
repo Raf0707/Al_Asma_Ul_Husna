@@ -27,6 +27,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import ru.tabiin.alasmaulhusna.BuildConfig;
 
@@ -214,6 +216,10 @@ public class AppAboutFragment extends Fragment {
         binding.tgGroupBtn.setOnClickListener(v -> new CustomTabUtil()
                 .openCustomTab(getActivity(), "https://t.me/+Lkw3ON0EsjZlNDIy",
                         R.color.md_theme_light_onSecondary));
+
+        binding.settingsBtn.setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(R.id.action_appAboutFragment_to_settingsFragment2);
+        });
 
     }
 
