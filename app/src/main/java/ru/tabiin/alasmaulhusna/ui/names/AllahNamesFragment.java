@@ -129,9 +129,7 @@ public class AllahNamesFragment extends Fragment {
 
     public static WeakReference<AllahNamesFragment> ctx = null;
     private List<Name> names = new ArrayList<>();
-    private List<DrawerNamesContent> namesDrawer = new ArrayList<>();
     private NamesAdapter namesAdapter;
-    private DrawerNamesAdapter drawerNamesAdapter;
 
     private FragmentAllahNamesBinding binding;
 
@@ -143,48 +141,17 @@ public class AllahNamesFragment extends Fragment {
         ctx = new WeakReference<>(this);
 
         init();
-        initDrawer();
-
         namesAdapter = new NamesAdapter(requireActivity(), names);
         binding.drawerListItem.setAdapter(namesAdapter);
         binding.drawerListItem.setHasFixedSize(false);
 
-        drawerNamesAdapter = new DrawerNamesAdapter(getContext(), namesDrawer,
-                binding.drawerListItem);
-        binding.nameDrawer.setAdapter(drawerNamesAdapter);
-        binding.nameDrawer.setHasFixedSize(false);
-
-        binding.drawerListItem.addOnScrollListener(
-                new RecyclerView.OnScrollListener() {
-                    @Override
-                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                        if (dy < 0 && !binding.fabNames.isShown())
-                            binding.fabNames.show();
-                        else if (dy > 0 && binding.fabNames.isShown())
-                            binding.fabNames.hide();
-                    }
-                }
-        );
-
-        binding.fabNames.setOnClickListener(v -> {
-            binding.drawerLayout.openDrawer(GravityCompat.START);
-        });
-
         return binding.getRoot();
 
     }
-
 
     public void init() {
         for(String n : namesAllaha){
             names.add(new Name(n));
         }
     }
-
-    public void initDrawer() {
-        for(String i : namesAllaha){
-            namesDrawer.add(new DrawerNamesContent(i));
-        }
-    }
-
 }

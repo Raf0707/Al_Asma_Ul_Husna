@@ -2,6 +2,8 @@ package ru.tabiin.alasmaulhusna.ui.about_app;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import static androidx.appcompat.content.res.AppCompatResources.getDrawable;
+
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -241,13 +243,13 @@ public class AppAboutFragment extends Fragment {
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 0);
                         if (AppCompatDelegate.getDefaultNightMode() ==
                                 AppCompatDelegate.MODE_NIGHT_YES) {
-                            binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                            binding.themesBtn.setIcon(getContext().getDrawable(
                                     R.drawable.baseline_nightl_24));
-                            bundle.putInt("iconTheme", R.drawable.baseline_nightl_24);
+                            //bundle.putInt("iconTheme", R.drawable.baseline_nightl_24);
                         } else {
-                            binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                            binding.themesBtn.setIcon(getContext().getDrawable(
                                     R.drawable.baseline_sunny_24));
-                            bundle.putInt("iconTheme", R.drawable.baseline_sunny_24);
+                            //bundle.putInt("iconTheme", R.drawable.baseline_sunny_24);
                         }
 
                         saveTheme(selectTheme);
@@ -258,9 +260,9 @@ public class AppAboutFragment extends Fragment {
 
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
-                        binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                        binding.themesBtn.setIcon(getContext().getDrawable(
                                 R.drawable.baseline_nightl_24));
-                        bundle.putInt("iconTheme", R.drawable.baseline_nightl_24);
+                        //bundle.putInt("iconTheme", R.drawable.baseline_nightl_24);
                         saveTheme(selectTheme);
                         requireActivity().recreate();
 
@@ -269,9 +271,9 @@ public class AppAboutFragment extends Fragment {
 
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
-                        binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
+                        binding.themesBtn.setIcon(getContext().getDrawable(
                                 R.drawable.baseline_sunny_24));
-                        bundle.putInt("iconTheme", R.drawable.baseline_sunny_24);
+                        //bundle.putInt("iconTheme", R.drawable.baseline_sunny_24);
                         saveTheme(selectTheme);
                         requireActivity().recreate();
                     }
