@@ -39,9 +39,8 @@ public class AllahNamesInfoFragment extends Fragment {
     private NamesAdapter namesAdapter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        binding = FragmentAllahNamesInfoBinding.inflate(getLayoutInflater());
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         arabicName = new String[]{
 
@@ -458,21 +457,25 @@ public class AllahNamesInfoFragment extends Fragment {
         };
 
         ctx = new WeakReference<>(this);
+    }
 
-
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        binding = FragmentAllahNamesInfoBinding.inflate(getLayoutInflater());
 
         //namesAdapter = new NamesAdapter(requireActivity(), names);
         namesInfoAdapter = new NamesInfoAdapter(requireActivity(), namesInfo);
         binding.drawerListItem.setAdapter(namesInfoAdapter);
         binding.drawerListItem.setHasFixedSize(false);
 
-        drawerNamesAdapter = new DrawerNamesAdapter(getContext(), namesDrawer, binding.drawerListItem);
-        binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
-        binding.nameDrawerInfo.setHasFixedSize(false);
+        //drawerNamesAdapter = new DrawerNamesAdapter(getContext(), namesDrawer, binding.drawerListItem);
+        //binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
+        //binding.nameDrawerInfo.setHasFixedSize(false);
 
-        initName();
-        init();
-        initDrawer();
+        //initName();
+        //init();
+        //initDrawer();
 
         binding.drawerListItem.addOnScrollListener(
                 new RecyclerView.OnScrollListener() {
@@ -486,14 +489,25 @@ public class AllahNamesInfoFragment extends Fragment {
                 }
         );
 
+        /*
         binding.fabNamesInfo.setOnClickListener(v -> {
             binding.drawerLayoutInfo.openDrawer(GravityCompat.START);
         });
 
+         */
+
         return binding.getRoot();
     }
 
-    public void init() {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initName();
+        init();
+    }
+
+
+        public void init() {
         for (int i = 0; i < arabicName.length; ++i) {
             namesInfo.add(new NameInfo(arabicName[i], transcriptName[i],
                     translateName[i], infoName[i]));
@@ -510,12 +524,5 @@ public class AllahNamesInfoFragment extends Fragment {
         for(String i : arabicName){
             namesDrawer.add(new DrawerNamesContent(i));
         }
-    }
-
-    @NonNull
-    public Bundle saveState() {
-        Bundle bundle = new Bundle();
-
-        return bundle;
     }
 }

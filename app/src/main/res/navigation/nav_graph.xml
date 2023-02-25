@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allahNamesFragment">
+
+    <fragment
+        android:id="@+id/allahNamesFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment"
+        android:label="fragment_allah_names"
+        tools:layout="@layout/fragment_allah_names" />
+    <fragment
+        android:id="@+id/allahNamesCounterFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.counter.AllahNamesCounterFragment"
+        android:label="fragment_allah_names_counter"
+        tools:layout="@layout/fragment_allah_names_counter" >
+        <action
+            android:id="@+id/action_allahNamesCounterFragment_to_tutorialFragment"
+            app:destination="@id/tutorialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allahNamesInfoFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment"
+        android:label="fragment_allah_names_info"
+        tools:layout="@layout/fragment_allah_names_info" />
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.counter.TutorialFragment"
+        android:label="fragment_tutorial"
+        tools:layout="@layout/fragment_tutorial" />
+    <fragment
+        android:id="@+id/appAboutFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.about_app.AppAboutFragment"
+        android:label="fragment_app_about"
+        tools:layout="@layout/fragment_app_about" />
+</navigation>

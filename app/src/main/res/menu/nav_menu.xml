@@ -3,26 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/allahNames"
+        android:id="@+id/allahNamesFragment"
         android:icon="@drawable/ic_baseline_format_list_bulleted_24"
-        android:title="Список"
-        app:showAsAction="ifRoom" />
+        android:title="Список" />
 
     <item
-        android:id="@+id/allahNamesInfo"
+        android:id="@+id/allahNamesInfoFragment"
         android:icon="@drawable/baseline_contact_support_24"
-        android:title="Информация"
-        app:showAsAction="ifRoom" />
+        android:title="Информация" />
 
     <item
-        android:id="@+id/counterAllahNames"
+        android:id="@+id/allahNamesCounterFragment"
         android:icon="@drawable/ic_baseline_task_alt_24"
-        android:title="Счетчики"
-        app:showAsAction="ifRoom" />
+        android:title="Счетчики" />
 
     <item
-        android:id="@+id/about_app"
+        android:id="@+id/appAboutFragment"
         android:icon="@drawable/ic_vector_info"
-        android:title="О приложении"
-        app:showAsAction="ifRoom" />
+        android:title="О приложении" />
 </menu>

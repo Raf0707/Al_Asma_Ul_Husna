@@ -650,9 +650,11 @@ public class AllahNamesCounterFragment extends Fragment {
 
     public void loadText() {
         sPref = getActivity().getPreferences(MODE_PRIVATE);
-        String salavat = sPref.getString("Прочитал" + currentPage, salavatCounter.getText().toString());
+        String salavat = sPref.getString("Прочитал" + currentPage,
+                salavatCounter.getText().toString());
         salavatCounter.setText(salavat);
-        currentCount = Integer.parseInt(sPref.getString("Прочитал" + currentPage, salavatCounter.getText().toString()));
+        currentCount = Integer.parseInt(sPref.getString("Прочитал" + currentPage,
+                salavatCounter.getText().toString()));
     }
 
     public void savePage() {
