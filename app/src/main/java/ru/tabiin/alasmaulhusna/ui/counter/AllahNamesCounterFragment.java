@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -187,19 +188,9 @@ public class AllahNamesCounterFragment extends Fragment {
             }
         });
 
-        /*
-        binding.openTutorialBtn.setOnClickListener(view1 -> UtilFragment.changeFragment(requireActivity(),
-                new TutorialFragment(),
-                R.id.containerFragment,
-                savedInstanceState
-        ));
-
-         */
-
         binding.openTutorialBtn.setOnClickListener(v -> {
-            getFragmentManager().beginTransaction()
-                    .replace(R.id.containerFragment, new TutorialFragment())
-                    .commit();
+            Navigation.findNavController(getView())
+                    .navigate(R.id.action_allahNamesCounterFragment_to_tutorialFragment);
         });
 
         loadPage();

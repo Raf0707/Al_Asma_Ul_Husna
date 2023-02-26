@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /*
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-     */
 
     @Override
     public void recreate() {

@@ -204,9 +204,12 @@ public class AppAboutFragment extends Fragment {
                     getString(R.string.tabiin_android_dev),
                     R.color.purple_300));
 
+        /*
         binding.themesBtn.setOnClickListener(v -> {
             onMaterialChangeTheme();
         });
+
+         */
 
         binding.bugReport.setOnClickListener(v -> BugReportHelper.sendEmail(getActivity()));
 
@@ -247,16 +250,6 @@ public class AppAboutFragment extends Fragment {
                                 AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.followSystemNightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 0);
-                        if (AppCompatDelegate.getDefaultNightMode() ==
-                                AppCompatDelegate.MODE_NIGHT_YES) {
-                            binding.themesBtn.setIcon(getContext().getDrawable(
-                                    R.drawable.baseline_nightl_24));
-                            //bundle.putInt("iconTheme", R.drawable.baseline_nightl_24);
-                        } else {
-                            binding.themesBtn.setIcon(getContext().getDrawable(
-                                    R.drawable.baseline_sunny_24));
-                            //bundle.putInt("iconTheme", R.drawable.baseline_sunny_24);
-                        }
 
                         saveTheme(selectTheme);
                         requireActivity().recreate();
@@ -266,9 +259,7 @@ public class AppAboutFragment extends Fragment {
 
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
-                        binding.themesBtn.setIcon(getContext().getDrawable(
-                                R.drawable.baseline_nightl_24));
-                        //bundle.putInt("iconTheme", R.drawable.baseline_nightl_24);
+
                         saveTheme(selectTheme);
                         requireActivity().recreate();
 
@@ -277,9 +268,7 @@ public class AppAboutFragment extends Fragment {
 
                         SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
                         SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
-                        binding.themesBtn.setIcon(getContext().getDrawable(
-                                R.drawable.baseline_sunny_24));
-                        //bundle.putInt("iconTheme", R.drawable.baseline_sunny_24);
+
                         saveTheme(selectTheme);
                         requireActivity().recreate();
                     }
@@ -312,14 +301,6 @@ public class AppAboutFragment extends Fragment {
                 AppCompatDelegate.setDefaultNightMode(
                         AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
 
-                if (AppCompatDelegate.getDefaultNightMode() ==
-                        AppCompatDelegate.MODE_NIGHT_YES) {
-                    binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
-                            R.drawable.baseline_nightl_24));
-
-                } else {
-                    binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
-                            R.drawable.baseline_sunny_24));
                 }
 
                 //saveTheme(selectTheme);
@@ -327,21 +308,18 @@ public class AppAboutFragment extends Fragment {
 
             } else if (selectTheme.equals("dark")) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
-                        R.drawable.baseline_nightl_24));
-                //saveTheme(selectTheme);
+
                 requireActivity().recreate();
 
             } else if (selectTheme.equals("light")) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                binding.themesBtn.setIcon(ContextCompat.getDrawable(getContext(),
-                        R.drawable.baseline_sunny_24));
-                //saveTheme(selectTheme);
+
                 requireActivity().recreate();
 
             }
         }
-    }
+
+
 
 
     @Override

@@ -3,14 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/allahNamesFragment"
-        android:icon="@drawable/ic_baseline_format_list_bulleted_24"
-        android:title="Список" />
-
-    <item
-        android:id="@+id/allahNamesInfoFragment"
+        android:id="@+id/namesBannerContainerFragment"
         android:icon="@drawable/baseline_contact_support_24"
-        android:title="Информация" />
+        android:title="Имена Аллаха" />
 
     <item
         android:id="@+id/allahNamesCounterFragment"

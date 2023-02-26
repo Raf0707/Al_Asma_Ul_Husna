@@ -237,19 +237,6 @@
                                 android:textAlignment="textStart"
                                 style="@style/Widget.Material3.Button.TextButton" />
 
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/themesBtn"
-                                style="@style/Widget.Material3.Button.TextButton"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Сменить тему"
-                                android:textAlignment="textStart"
-                                android:textSize="20sp"
-                                app:icon="@drawable/baseline_sunny_24"
-                                android:onClick="buttonPressed"
-                                app:iconPadding="16dp"
-                                app:iconSize="24dp" />
-
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>

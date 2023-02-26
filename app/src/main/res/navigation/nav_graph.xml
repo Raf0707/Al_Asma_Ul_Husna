@@ -20,11 +20,6 @@
             app:destination="@id/tutorialFragment" />
     </fragment>
     <fragment
-        android:id="@+id/allahNamesInfoFragment"
-        android:name="ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment"
-        android:label="fragment_allah_names_info"
-        tools:layout="@layout/fragment_allah_names_info" />
-    <fragment
         android:id="@+id/tutorialFragment"
         android:name="ru.tabiin.alasmaulhusna.ui.counter.TutorialFragment"
         android:label="fragment_tutorial"
@@ -43,4 +38,18 @@
         android:name="ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/namesBannerContainerFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.names.NamesBannerContainerFragment"
+        android:label="fragment_names_banner_container"
+        tools:layout="@layout/fragment_names_banner_container" >
+        <action
+            android:id="@+id/action_namesBannerContainerFragment_to_allahNamesInfoFragment3"
+            app:destination="@id/allahNamesInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allahNamesInfoFragment"
+        android:name="ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment"
+        android:label="fragment_allah_names_info"
+        tools:layout="@layout/fragment_allah_names_info" />
 </navigation>
