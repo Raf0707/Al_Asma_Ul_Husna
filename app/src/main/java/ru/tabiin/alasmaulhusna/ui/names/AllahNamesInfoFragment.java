@@ -477,6 +477,10 @@ public class AllahNamesInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentAllahNamesInfoBinding.inflate(getLayoutInflater());
 
+        initName();
+        init();
+        initDrawer();
+
         namesAdapter = new NamesAdapter(requireActivity(), names);
         namesInfoAdapter = new NamesInfoAdapter(requireActivity(), namesInfo);
         binding.drawerListItem.setAdapter(namesInfoAdapter);
@@ -486,9 +490,7 @@ public class AllahNamesInfoFragment extends Fragment {
         binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
         binding.nameDrawerInfo.setHasFixedSize(false);
 
-        initName();
-        init();
-        initDrawer();
+
 
         binding.drawerListItem.addOnScrollListener(
                 new RecyclerView.OnScrollListener() {
