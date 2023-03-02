@@ -8,24 +8,14 @@
     android:id="@+id/counterAllahNames"
     tools:context="ru.tabiin.alasmaulhusna.ui.counter.AllahNamesCounterFragment">
 
-    <ViewStub
-        android:id="@+id/view_stub"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHeight_default="spread"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
     <TextView
         android:id="@+id/arabic"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="135dp"
         android:gravity="center"
         android:text=""
-        
         android:textSize="74sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +48,6 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text=""
-        
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,12 +72,12 @@
 
     <TextView
         android:id="@+id/salavatCounter"
+        style="@style/colorGreenIce"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="16dp"
         android:gravity="bottom|center"
         android:text="0"
-        
         android:textSize="100sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

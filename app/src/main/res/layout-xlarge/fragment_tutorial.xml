@@ -88,26 +88,6 @@
         app:layout_constraintVertical_bias="0.204" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="42dp"
-        android:layout_height="41dp"
-        android:background="@drawable/baseline_exposure_plus_1_24"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:textAllCaps="true"
-        
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:layout_constraintVertical_bias="0.105" />
-
-    <TextView
         android:id="@+id/textView5"
         android:layout_width="215dp"
         android:layout_height="41dp"
@@ -126,45 +106,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
         app:layout_constraintVertical_bias="0.105" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="42dp"
-        android:layout_height="41dp"
-        android:background="@drawable/baseline_exposure_plus_1_24"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:textAllCaps="true"
-        
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <TextView
-        android:layout_width="42dp"
-        android:layout_height="41dp"
-        android:background="@drawable/ic_baseline_restart_alt_24"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:textAllCaps="true"
-        
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.195" />
 
     <TextView
         android:id="@+id/textView6"
@@ -194,17 +135,76 @@
         android:gravity="center"
         android:imeOptions="actionDone"
         android:textAllCaps="true"
-        
+
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintHorizontal_bias="0.661"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.111" />
+
+    <TextView
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:background="@drawable/ic_baseline_restart_alt_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:background="@drawable/baseline_exposure_plus_1_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:background="@drawable/baseline_exposure_plus_1_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintVertical_bias="0.109" />
 
     <TextView
         android:id="@+id/textView9"

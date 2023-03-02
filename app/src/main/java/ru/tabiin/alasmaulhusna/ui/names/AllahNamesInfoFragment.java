@@ -1,16 +1,21 @@
 package ru.tabiin.alasmaulhusna.ui.names;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.adapters.names.DrawerNamesAdapter;
@@ -20,6 +25,7 @@ import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesInfoBinding;
 import ru.tabiin.alasmaulhusna.objects.names.drawer_names.DrawerNamesContent;
 import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
 import ru.tabiin.alasmaulhusna.objects.names.names.Name;
+import ru.tabiin.alasmaulhusna.util.MyDrawerLayout;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -37,6 +43,13 @@ public class AllahNamesInfoFragment extends Fragment {
     private NamesInfoAdapter namesInfoAdapter;
     private DrawerNamesAdapter drawerNamesAdapter;
     private NamesAdapter namesAdapter;
+
+    private MyDrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+
+    public AllahNamesInfoFragment() {
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
