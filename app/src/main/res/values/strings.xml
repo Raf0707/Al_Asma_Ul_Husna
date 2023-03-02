@@ -13,12 +13,16 @@
     <string name="version">Версия: 1.0.0.0</string>
     <string name="rafail_url" translatable="false">https://github.com/Raf0707</string>
     <string name="mail_raf" translatable="false">raf_android-dev@mail.ru</string>
+    <string name="mail_danila" translatable="false">rswayfarersx@gmail.com</string>
     <string name="source_code">Исходный код</string>
     <string name="source_code_url" translatable="false">https://github.com/Raf0707/Al_Asma_Ul_Husna</string>
     <string name="from_tabiin">from Tabiin</string>
     <string name="tabiin" translatable="false">https://vk.com/club213851453</string>
     <string name="Raf_title">Рафаил Кикматулин</string>
+    <string name="Danila_title">Данила Воробьев</string>
     <string name="raf_android_dev_mail_ru">raf_android-dev@mail.ru</string>
+    <string name="rswayfarersx_gmail_com">rswayfarersx@gmail.com</string>
+    <string name="danila_url">https://github.com/DanilaDevx21x</string>
     <string name="version_copied">version copied</string>
     <string name="getContext">getContext()</string>
     <string name="Tabiin_str_Version">\"Tabiin: \</string>

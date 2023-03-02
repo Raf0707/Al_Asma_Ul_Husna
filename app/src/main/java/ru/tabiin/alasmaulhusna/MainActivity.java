@@ -42,60 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        try {
-            navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
-            assert navHostFragment != null;
-            NavController navController = navHostFragment.getNavController();
-            BottomNavigationView bottomNav = findViewById(R.id.bottomAppBar);
-            NavigationUI.setupWithNavController(bottomNav, navController);
 
-        } catch (Exception e) {
-            new MaterialAlertDialogBuilder(this)
-                    .setTitle("НА, ХАВАЙ")
-                    .setMessage("Ошибка в этом:" + "\n" + e.getMessage())
-                    .setPositiveButton("OK", null)
-                    .show();
-        }
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        int id = navHostFragment.getNavController().getCurrentDestination().getId();
-        if (!(id == R.id.counterAllahNames)) {
-            actionBar.setDisplayHomeAsUpEnabled(false);
-        }
-    }
-
-
-    @Override
-    public void recreate() {
-        getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
-        super.recreate();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 }
