@@ -15,7 +15,6 @@ import android.view.ContextThemeWrapper;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.color.DynamicColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import ru.tabiin.alasmaulhusna.databinding.ActivityMainBinding;
@@ -29,11 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
-
-        if (SharedPreferencesUtils.getBoolean(this, "useDynamicColors"))
-            DynamicColors.applyToActivityIfAvailable(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-
         setContentView(binding.getRoot());
         actionBar = getSupportActionBar();
 
