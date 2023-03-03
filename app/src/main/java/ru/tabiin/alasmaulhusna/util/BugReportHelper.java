@@ -16,7 +16,7 @@ public class BugReportHelper {
 
     public static void sendEmail(Context context) {
 
-        String manufacturer = android.os.Build.MANUFACTURER;
+        String manufacturer = Build.MANUFACTURER;
         String model_name = Build.DEVICE;
         String number_model = Build.MODEL;
         String android_version_name = Build.VERSION.RELEASE_OR_CODENAME;

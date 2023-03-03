@@ -3,22 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/allahNamesF"
+        android:id="@+id/names_list"
         android:icon="@drawable/ic_baseline_format_list_bulleted_24"
         android:title="Имена Аллаха" />
 
+
     <item
-        android:id="@+id/allahNamesInfo"
+        android:id="@+id/names_info"
         android:icon="@drawable/baseline_contact_support_24"
         android:title="Информация" />
 
     <item
-        android:id="@+id/counterAllahNames"
+        android:id="@+id/names_counter"
         android:icon="@drawable/ic_baseline_task_alt_24"
         android:title="Счетчики" />
 
     <item
-        android:id="@+id/about_app"
+        android:id="@+id/app_about"
         android:icon="@drawable/ic_vector_info"
         android:title="О приложении" />
 </menu>

@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment;
 
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentTutorialBinding;
-
+import ru.tabiin.alasmaulhusna.util.UtilFragment;
+import ru.tabiin.alasmaulhusna.R;
+import ru.tabiin.alasmaulhusna.databinding.FragmentTutorialBinding;
 import ru.tabiin.alasmaulhusna.util.UtilFragment;
 
 public class TutorialFragment extends Fragment {

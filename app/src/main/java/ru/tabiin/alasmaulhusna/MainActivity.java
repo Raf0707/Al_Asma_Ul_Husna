@@ -1,81 +1,80 @@
 package ru.tabiin.alasmaulhusna;
 
-import androidx.appcompat.app.ActionBar;
+import android.os.Bundle;
+import android.view.Window;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
-import androidx.navigation.fragment.NavHostFragment;
 
-import android.os.Bundle;
-import android.view.ContextThemeWrapper;
-
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.color.DynamicColors;
 
 import ru.tabiin.alasmaulhusna.databinding.ActivityMainBinding;
 import ru.tabiin.alasmaulhusna.ui.about_app.AppAboutFragment;
 import ru.tabiin.alasmaulhusna.ui.counter.AllahNamesCounterFragment;
 import ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment;
-import ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment;
 import ru.tabiin.alasmaulhusna.util.SharedPreferencesUtils;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
+    ActivityMainBinding binding;
+
+    AppAboutFragment appAboutFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        App.instance.setNightMode();
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.containerFragment, new AllahNamesFragment())
+                    .commit();
+        }
+
+        if (SharedPreferencesUtils.getBoolean(this, "useDynamicColors"))
+            DynamicColors.applyToActivityIfAvailable(this);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        if (!SharedPreferencesUtils.getBoolean(this, "isFirstOpen")) {
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(new ContextThemeWrapper(this, R.style.Theme_AlAsmaUlHusna));
-            builder.setIcon(R.drawable.icon_tabiin_light);
-            builder.setTitle(R.string.welcome);
-            builder.setMessage(R.string.welcome_message);
-            builder.setPositiveButton("OK", (dialog, which) -> SharedPreferencesUtils.saveBoolean(this, "isFirstOpen", true));
-            builder.show();
-
-        }
+        appAboutFragment = new AppAboutFragment();
 
         binding.bottomNavView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
-                case R.id.allahNamesF:
+                case R.id.names_list:
+
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new AllahNamesFragment()).commit();
+                            .replace(R.id.containerFragment, new AllahNamesFragment())
+                            .commit();
+
                     return true;
 
-                case R.id.allahNamesInfo:
+                case R.id.names_info:
+
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new AllahNamesInfoFragment()).commit();
+                            .replace(R.id.containerFragment, new ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment())
+                            .commit();
+
                     return true;
 
-                case R.id.counterAllahNames:
+                case R.id.names_counter:
+
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new AllahNamesCounterFragment()).commit();
+                            .replace(R.id.containerFragment, new AllahNamesCounterFragment())
+                            .commit();
+
                     return true;
 
-                case R.id.about_app:
+                case R.id.app_about:
+
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new AppAboutFragment()).commit();
+                            .replace(R.id.containerFragment, new AppAboutFragment())
+                            .commit();
                     return true;
             }
             return false;
         });
-
     }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
-
 }

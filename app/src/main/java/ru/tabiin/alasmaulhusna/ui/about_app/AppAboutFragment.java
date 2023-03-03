@@ -1,18 +1,11 @@
 package ru.tabiin.alasmaulhusna.ui.about_app;
 
-import static android.content.Context.MODE_PRIVATE;
-
-import static androidx.appcompat.content.res.AppCompatResources.getDrawable;
-
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,25 +17,23 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import ru.tabiin.alasmaulhusna.BuildConfig;
-
-
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentAppAboutBinding;
-import ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment;
 import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
 import ru.tabiin.alasmaulhusna.util.BugReportHelper;
 import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
-import ru.tabiin.alasmaulhusna.util.SharedPreferencesUtils;
-
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
+import ru.tabiin.alasmaulhusna.BuildConfig;
+import ru.tabiin.alasmaulhusna.R;
+import ru.tabiin.alasmaulhusna.databinding.FragmentAppAboutBinding;
+import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
+import ru.tabiin.alasmaulhusna.util.BugReportHelper;
+import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
 
 
 public class AppAboutFragment extends Fragment {
@@ -202,14 +193,13 @@ public class AppAboutFragment extends Fragment {
                     getString(R.string.tabiin_android_dev),
                     R.color.purple_300));
 
-        /*
-        binding.themesBtn.setOnClickListener(v -> {
-            onMaterialChangeTheme();
+        binding.settingsBtn.setOnClickListener(v -> {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.containerFragment, new SettingsFragment())
+                    .commit();
         });
 
-         */
-
-        binding.bugReport.setOnClickListener(v -> BugReportHelper.sendEmail(getActivity()));
+        //binding.bugReport.setOnClickListener(v -> BugReportHelper.sendEmail(getActivity()));
 
         binding.donateBtn.setOnClickListener(v -> new CustomTabUtil().openCustomTab(getActivity(),
                 "https://www.donationalerts.com/r/raf0707", R.color.md_theme_light_onSecondary));
@@ -226,57 +216,6 @@ public class AppAboutFragment extends Fragment {
 
         clipboardManager.setPrimaryClip(clipData);
         Snackbar.make(requireView(), text, Snackbar.LENGTH_LONG).show();
-    }
-
-    public void onMaterialChangeTheme() {
-        final String[] resetModes = {"system", "dark", "light"};
-        Bundle bundle = new Bundle();
-        new MaterialAlertDialogBuilder(requireContext(),
-                R.style.AlertDialogTheme)
-                .setTitle("Сменить тему?")
-                .setSingleChoiceItems(resetModes, 0, (dialogInterface, i) -> {
-                    selectTheme = resetModes[i];
-                })
-                .setPositiveButton("Да", (dialogInterface, i) -> {
-
-                    if (selectTheme == resetModes[0]) {
-                        AppCompatDelegate.setDefaultNightMode(
-                                AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                        SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.followSystemNightModeRadioButton);
-                        SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 0);
-
-                        saveTheme(selectTheme);
-                        requireActivity().recreate();
-
-                    } else if (selectTheme == resetModes[1]) {
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-                        SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.noNightModeRadioButton);
-                        SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 2);
-
-                        saveTheme(selectTheme);
-                        requireActivity().recreate();
-
-                    } else if (selectTheme == resetModes[2]) {
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-                        SharedPreferencesUtils.saveInteger(requireContext(), "checkedButton", R.id.nightModeRadioButton);
-                        SharedPreferencesUtils.saveInteger(requireContext(), "nightMode", 1);
-
-                        saveTheme(selectTheme);
-                        requireActivity().recreate();
-                    }
-
-                    Snackbar.make(requireView(), "Вы выбрали " + selectTheme,
-                            BaseTransientBottomBar.LENGTH_SHORT).show();
-                    saveTheme(selectTheme);
-
-
-                })
-                .setNeutralButton("Отмена",
-                        (dialogInterface, i) ->
-                                dialogInterface.cancel())
-                .show();
     }
 
     public void saveTheme(String selectTheme) {

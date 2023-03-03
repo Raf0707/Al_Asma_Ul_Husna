@@ -4,8 +4,6 @@ import android.app.Application;
 
 import androidx.appcompat.app.AppCompatDelegate;
 
-import com.google.android.material.color.DynamicColors;
-
 import ru.tabiin.alasmaulhusna.util.SharedPreferencesUtils;
 
 public class App extends Application {

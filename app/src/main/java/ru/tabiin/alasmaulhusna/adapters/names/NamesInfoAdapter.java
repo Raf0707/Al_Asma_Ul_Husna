@@ -10,23 +10,20 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import ru.tabiin.alasmaulhusna.R;
-import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
-import ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
+import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
+import ru.tabiin.alasmaulhusna.R;
+import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
+
 public class NamesInfoAdapter extends RecyclerView.Adapter<NamesInfoAdapter.ViewHolder> {
-    public static final AllahNamesInfoFragment CTX = AllahNamesInfoFragment.ctx.get();
+    public static final ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment CTX = ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment.ctx.get();
 
     private LayoutInflater inflater;
     private List<NameInfo> namesInfo;
-    //private TextView arabicName;
-    //private TextView transcriptName;
-    //private TextView translateName;
-    //private TextView infoName;
 
     public NamesInfoAdapter(Context context, List<NameInfo> namesInfo) {
         this.namesInfo = namesInfo;
@@ -36,10 +33,8 @@ public class NamesInfoAdapter extends RecyclerView.Adapter<NamesInfoAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        //View view = inflater.inflate(R.layout.names_info_item, parent, false);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.names_info_item,
                 parent, false);
-        //return new NamesInfoAdapter.ViewHolder(view);
         return new ViewHolder(view);
     }
 

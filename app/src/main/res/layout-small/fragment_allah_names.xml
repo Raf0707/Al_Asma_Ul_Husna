@@ -9,15 +9,15 @@
     android:padding="16dp"
     tools:context="ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/drawerListItem"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="16dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/drawerListItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:layout_editor_absoluteX="-7dp"
+            tools:layout_editor_absoluteY="16dp">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

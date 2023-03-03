@@ -1,4 +1,4 @@
-package ru.tabiin.alasmaulhusna.adapters.names;
+package ru.tabiin.alalasmaulhusna.adapters.names;
 
 import static java.lang.String.format;
 
@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import ru.tabiin.alasmaulhusna.R;
-import ru.tabiin.alasmaulhusna.objects.names.drawer_names.DrawerNamesContent;
-
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
+
+import ru.tabiin.alasmaulhusna.R;
+import ru.tabiin.alasmaulhusna.objects.names.drawer_names.DrawerNamesContent;
 
 public class DrawerNamesAdapter extends RecyclerView.Adapter<DrawerNamesAdapter.ViewHolder> {
     private LayoutInflater inflater;
@@ -41,7 +41,7 @@ public class DrawerNamesAdapter extends RecyclerView.Adapter<DrawerNamesAdapter.
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.drawer_names_item,
                 parent, false);
-        return new DrawerNamesAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override

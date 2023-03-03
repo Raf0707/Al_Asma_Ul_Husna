@@ -1,35 +1,27 @@
-package ru.tabiin.alasmaulhusna.ui.names;
+package ru.tabiin.alalasmaulhusna.ui.names;
 
-import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.GravityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
+
 import ru.tabiin.alasmaulhusna.R;
-import ru.tabiin.alasmaulhusna.adapters.names.DrawerNamesAdapter;
-import ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter;
 import ru.tabiin.alasmaulhusna.adapters.names.NamesInfoAdapter;
 import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesInfoBinding;
 import ru.tabiin.alasmaulhusna.objects.names.drawer_names.DrawerNamesContent;
 import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
 import ru.tabiin.alasmaulhusna.objects.names.names.Name;
 import ru.tabiin.alasmaulhusna.util.MyDrawerLayout;
-
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class AllahNamesInfoFragment extends Fragment {
@@ -41,8 +33,8 @@ public class AllahNamesInfoFragment extends Fragment {
     private List<Name> names = new ArrayList<>();
     private List<DrawerNamesContent> namesDrawer = new ArrayList<>();
     private NamesInfoAdapter namesInfoAdapter;
-    private DrawerNamesAdapter drawerNamesAdapter;
-    private NamesAdapter namesAdapter;
+    private ru.tabiin.alalasmaulhusna.adapters.names.DrawerNamesAdapter drawerNamesAdapter;
+    private ru.tabiin.alalasmaulhusna.adapters.names.NamesAdapter namesAdapter;
 
     private MyDrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -52,8 +44,9 @@ public class AllahNamesInfoFragment extends Fragment {
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        binding = FragmentAllahNamesInfoBinding.inflate(getLayoutInflater());
 
         arabicName = new String[]{
 
@@ -470,26 +463,26 @@ public class AllahNamesInfoFragment extends Fragment {
         };
 
         ctx = new WeakReference<>(this);
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        binding = FragmentAllahNamesInfoBinding.inflate(getLayoutInflater());
+
 
         initName();
         init();
         initDrawer();
 
-        namesAdapter = new NamesAdapter(requireActivity(), names);
+        namesAdapter = new ru.tabiin.alalasmaulhusna.adapters.names.NamesAdapter(requireActivity(), names);
         namesInfoAdapter = new NamesInfoAdapter(requireActivity(), namesInfo);
         binding.drawerListItem.setAdapter(namesInfoAdapter);
         binding.drawerListItem.setHasFixedSize(false);
 
-        drawerNamesAdapter = new DrawerNamesAdapter(getContext(), namesDrawer, binding.drawerListItem);
+        drawerNamesAdapter = new ru.tabiin.alalasmaulhusna.adapters.names.DrawerNamesAdapter(getContext(), namesDrawer, binding.drawerListItem);
         binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
         binding.nameDrawerInfo.setHasFixedSize(false);
 
+
+        initName();
+        init();
+        initDrawer();
 
 
         binding.drawerListItem.addOnScrollListener(
@@ -504,25 +497,14 @@ public class AllahNamesInfoFragment extends Fragment {
                 }
         );
 
-        /*
         binding.fabNamesInfo.setOnClickListener(v -> {
             binding.drawerLayoutInfo.openDrawer(GravityCompat.START);
         });
 
-         */
-
         return binding.getRoot();
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initName();
-        init();
-    }
-
-
-        public void init() {
+    public void init() {
         for (int i = 0; i < arabicName.length; ++i) {
             namesInfo.add(new NameInfo(arabicName[i], transcriptName[i],
                     translateName[i], infoName[i]));
@@ -539,5 +521,12 @@ public class AllahNamesInfoFragment extends Fragment {
         for(String i : arabicName){
             namesDrawer.add(new DrawerNamesContent(i));
         }
+    }
+
+    @NonNull
+    public Bundle saveState() {
+        Bundle bundle = new Bundle();
+
+        return bundle;
     }
 }

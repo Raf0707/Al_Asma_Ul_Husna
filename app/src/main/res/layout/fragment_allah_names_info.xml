@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
-    tools:context="ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment">
+    tools:context=".ui.names.AllahNamesInfoFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -32,7 +32,6 @@
                 android:id="@+id/fabNamesInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/purple_300"
                 android:padding="16dp"
                 android:src="@drawable/baseline_contact_support_24"
                 app:tint="@color/white"

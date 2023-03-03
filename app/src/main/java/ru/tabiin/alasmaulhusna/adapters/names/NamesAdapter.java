@@ -1,4 +1,4 @@
-package ru.tabiin.alasmaulhusna.adapters.names;
+package ru.tabiin.alalasmaulhusna.adapters.names;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -10,13 +10,15 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import ru.tabiin.alasmaulhusna.R;
-import ru.tabiin.alasmaulhusna.objects.names.names.Name;
-import ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
+
+import ru.tabiin.alasmaulhusna.objects.names.names.Name;
+import ru.tabiin.alasmaulhusna.R;
+import ru.tabiin.alasmaulhusna.objects.names.names.Name;
+import ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment;
 
 public class NamesAdapter extends RecyclerView.Adapter<NamesAdapter.ViewHolder> {
 
@@ -43,7 +45,7 @@ public class NamesAdapter extends RecyclerView.Adapter<NamesAdapter.ViewHolder> 
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listitem,
                 parent, false);
-        return new NamesAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
 

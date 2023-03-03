@@ -5,21 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
-
-import ru.tabiin.alasmaulhusna.adapters.names.DrawerNamesAdapter;
-import ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter;
-import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesBinding;
-import ru.tabiin.alasmaulhusna.objects.names.drawer_names.DrawerNamesContent;
-import ru.tabiin.alasmaulhusna.objects.names.names.Name;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+
+import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesBinding;
+import ru.tabiin.alasmaulhusna.objects.names.names.Name;
 
 
 public class AllahNamesFragment extends Fragment {
@@ -129,7 +122,7 @@ public class AllahNamesFragment extends Fragment {
 
     public static WeakReference<AllahNamesFragment> ctx = null;
     private List<Name> names = new ArrayList<>();
-    private NamesAdapter namesAdapter;
+    private ru.tabiin.alalasmaulhusna.adapters.names.NamesAdapter namesAdapter;
 
     private FragmentAllahNamesBinding binding;
 
@@ -141,7 +134,7 @@ public class AllahNamesFragment extends Fragment {
         ctx = new WeakReference<>(this);
 
         init();
-        namesAdapter = new NamesAdapter(requireActivity(), names);
+        namesAdapter = new ru.tabiin.alalasmaulhusna.adapters.names.NamesAdapter(requireActivity(), names);
         binding.drawerListItem.setAdapter(namesAdapter);
         binding.drawerListItem.setHasFixedSize(false);
 

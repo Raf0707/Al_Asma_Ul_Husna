@@ -4,12 +4,6 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,15 +12,19 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import ru.tabiin.alasmaulhusna.R;
-import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesCounterBinding;
-import ru.tabiin.alasmaulhusna.util.OnSwipeTouchListener;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.concurrent.TimeUnit;
 
+import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesCounterBinding;
+import ru.tabiin.alasmaulhusna.R;
+import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesCounterBinding;
+import ru.tabiin.alasmaulhusna.util.OnSwipeTouchListener;
 import ru.tabiin.alasmaulhusna.util.UtilFragment;
 
 public class AllahNamesCounterFragment extends Fragment {
