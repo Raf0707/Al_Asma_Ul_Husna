@@ -90,7 +90,7 @@
 
     <style name="Theme.AppTheme.SplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/md_theme_dark_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/tabiin_icon_night</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/names_night_banner</item>
         <item name="windowSplashScreenAnimationDuration">3000</item>
         <item name="android:textColor">@color/md_theme_dark_primary</item>
         <item name="android:textAppearance">@style/ColorGreenIce</item>

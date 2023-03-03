@@ -51,18 +51,18 @@
                                 android:layout_width="160dp"
                                 android:layout_height="wrap_content"
                                 android:padding="8dp"
-                                android:src="@drawable/tabiin_about" />
+                                android:src="@drawable/icon_names_banner" />
 
                             <LinearLayout
-                                android:layout_width="240dp"
-                                android:layout_height="120dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_gravity="center|center_vertical"
                                 android:orientation="vertical"
                                 android:padding="8dp">
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="50dp"
+                                    android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:text="Al Asma Ul Husna"
                                     android:textSize="20sp"
