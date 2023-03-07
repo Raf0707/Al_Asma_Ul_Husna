@@ -67,22 +67,38 @@ public class AllahNamesCounterFragment extends Fragment {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                saveText();
+                //saveText();
                 currentPage = progress;
                 textPage[currentPage] = Integer.toString(progress);
                 seekBar.setProgress(progress);
-                loadText();
             }
+
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
                 saveText();
+                currentPage = seekBar.getProgress();
+                savePage();
                 loadText();
+                if (currentCount < 0) currentCount = 0;
+                if (currentPage < 0) currentPage = 99;
+                if (currentPage > 99) currentPage = 0;
+                seekBar.setProgress(currentPage);
+                //textCount[currentPage] = Integer.toString(currentCount);
+                salavatCounter.setText(textCount[currentPage]);
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 saveText();
+                currentPage = seekBar.getProgress();
+                savePage();
                 loadText();
+                if (currentCount < 0) currentCount = 0;
+                if (currentPage < 0) currentPage = 99;
+                if (currentPage > 99) currentPage = 0;
+                seekBar.setProgress(currentPage);
+                //textCount[currentPage] = Integer.toString(currentCount);
+                salavatCounter.setText(textCount[currentPage]);
             }
 
         });
@@ -116,19 +132,20 @@ public class AllahNamesCounterFragment extends Fragment {
                 if (currentCount < 0) currentCount = 0;
                 if (currentPage < 0) currentPage = 99;
                 seekBar.setProgress(currentPage);
+                textCount[currentPage] = Integer.toString(currentCount);
+                salavatCounter.setText(textCount[currentPage]);
             }
 
             @Override
             public void onSwipeLeft() {
                 saveText();
                 currentPage++;
-                if (currentPage > 99) {
-                    currentPage = 0;
-                }
+                if (currentPage > 99) currentPage = 0;
                 savePage();
                 loadText();
-
                 seekBar.setProgress(currentPage);
+                textCount[currentPage] = Integer.toString(currentCount);
+                salavatCounter.setText(textCount[currentPage]);
             }
 
             @Override
@@ -648,9 +665,11 @@ public class AllahNamesCounterFragment extends Fragment {
 
     public void loadText() {
         sPref = getActivity().getPreferences(MODE_PRIVATE);
-        String salavat = sPref.getString("Прочитал" + currentPage, salavatCounter.getText().toString());
+        String salavat = sPref.getString("Прочитал" + currentPage,
+                salavatCounter.getText().toString());
         salavatCounter.setText(salavat);
-        currentCount = Integer.parseInt(sPref.getString("Прочитал" + currentPage, salavatCounter.getText().toString()));
+        currentCount = Integer.parseInt(sPref.getString("Прочитал" + currentPage,
+                salavatCounter.getText().toString()));
     }
 
     public void savePage() {
@@ -663,9 +682,7 @@ public class AllahNamesCounterFragment extends Fragment {
     public void loadPage() {
         sPref = getActivity().getPreferences(MODE_PRIVATE);
         currentPage = (sPref.getInt("page", currentPage));
-        if (currentPage > 99) {
-            currentPage = 99;
-        }
+        if (currentPage > 99) currentPage = 99;
         seekBar.setProgress(currentPage);
         page.setText(Integer.toString(currentPage));
     }
