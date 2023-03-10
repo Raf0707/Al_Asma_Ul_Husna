@@ -20,7 +20,7 @@
 </p>
 
 ## 🆕 Material3 Design Al Asma Ul Husna for Android
-## ⚠ Join [@Tabiin/Al_Asma_Ul_Husna](https://t.me/+Lkw3ON0EsjZlNDIy) on Telegram for important updates.
+## ⚠ Join [@Tabiin/Tabiin.Android-Development](https://t.me/+QTIZZFhT__ZjMmFi) on Telegram for important updates.
 ## 📱 Screenshots
 | <img src="github-files/splash_screen.jpg" width="200"/> | <img src="github-files/screen_names.jpg" width="200"/> | <img src="github-files/screen_info.jpg" width="200"/> | <img src="github-files/screen_drawer.jpg" width="200"/> | <img src="github-files/screen_counter.jpg" width="200"/> | <img src="github-files/screen_tutorial.jpg" width="200"/> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
