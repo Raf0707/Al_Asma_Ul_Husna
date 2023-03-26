@@ -208,6 +208,35 @@ public class AppAboutFragment extends Fragment {
                 .openCustomTab(getActivity(), "https://t.me/+Lkw3ON0EsjZlNDIy",
                         R.color.md_theme_light_onSecondary));
 
+        binding.downloadUmmaLifeGooglePlay.setOnClickListener(v -> {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/details?id=com.ummalife.android")));
+            } catch (android.content.ActivityNotFoundException anfe) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.GOOGLE_PLAY))));
+            }
+        });
+
+        binding.vkUmmaLife.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(),
+                        "https://vk.com/ummalife_com?ysclid=lfot4irl1443773327",
+                        R.color.purple_300));
+
+        binding.tgUmmaLife.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(),
+                        "https://t.me/man_umma",
+                        R.color.purple_300));
+
+        binding.webUmmaLife.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(),
+                        "https://ummalife.com",
+                        R.color.purple_300));
+
+        binding.weAreInUmmaLife.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(),
+                        "https://ummalife.com/tabiin",
+                        R.color.purple_300));
+
     }
 
     public void addOnClick(View view, String text, ClipData clipData) {

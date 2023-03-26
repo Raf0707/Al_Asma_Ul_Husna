@@ -26,7 +26,7 @@
     <string name="version_copied">version copied</string>
     <string name="getContext">getContext()</string>
     <string name="Tabiin_str_Version">\"Tabiin: \</string>
-    <string name="GOOGLE_PLAY" translatable="false">https://play.google.com/store/apps/dev?id=8551876312630719902</string>
+    <string name="GOOGLE_PLAY" translatable="false">https://play.google.com/store/apps/details?id=com.ummalife.android</string>
     <string name="str_dv">\: \</string>
     <string name="val_str_sk_right">\ ( \</string>
     <string name="val_str_sk_left">\) \</string>

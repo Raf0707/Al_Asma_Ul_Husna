@@ -20,7 +20,8 @@ import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
 
 public class NamesInfoAdapter extends RecyclerView.Adapter<NamesInfoAdapter.ViewHolder> {
-    public static final ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment CTX = ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment.ctx.get();
+    public static final ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment CTX =
+            ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment.ctx.get();
 
     private LayoutInflater inflater;
     private List<NameInfo> namesInfo;
