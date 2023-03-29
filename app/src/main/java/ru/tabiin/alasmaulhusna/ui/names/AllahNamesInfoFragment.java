@@ -1,15 +1,19 @@
-package ru.tabiin.alalasmaulhusna.ui.names;
+package ru.tabiin.alasmaulhusna.ui.names;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -34,7 +38,7 @@ public class AllahNamesInfoFragment extends Fragment {
     private List<DrawerNamesContent> namesDrawer = new ArrayList<>();
     private NamesInfoAdapter namesInfoAdapter;
     private ru.tabiin.alalasmaulhusna.adapters.names.DrawerNamesAdapter drawerNamesAdapter;
-    private ru.tabiin.alalasmaulhusna.adapters.names.NamesAdapter namesAdapter;
+    private ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter namesAdapter;
 
     private MyDrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -464,13 +468,29 @@ public class AllahNamesInfoFragment extends Fragment {
 
         ctx = new WeakReference<>(this);
 
-
-
         initName();
         init();
         initDrawer();
 
-        namesAdapter = new ru.tabiin.alalasmaulhusna.adapters.names.NamesAdapter(requireActivity(), names);
+        binding.searchName.clearFocus();
+        binding.searchName.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                filterList(s);
+                return true;
+            }
+        });
+
+        binding.searchName.setOnClickListener(v ->
+            binding.searchName.clearFocus()
+        );
+
+        namesAdapter = new ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter(requireActivity(), names);
         namesInfoAdapter = new NamesInfoAdapter(requireActivity(), namesInfo);
         binding.drawerListItem.setAdapter(namesInfoAdapter);
         binding.drawerListItem.setHasFixedSize(false);
@@ -478,7 +498,6 @@ public class AllahNamesInfoFragment extends Fragment {
         drawerNamesAdapter = new ru.tabiin.alalasmaulhusna.adapters.names.DrawerNamesAdapter(getContext(), namesDrawer, binding.drawerListItem);
         binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
         binding.nameDrawerInfo.setHasFixedSize(false);
-
 
         initName();
         init();
@@ -528,5 +547,39 @@ public class AllahNamesInfoFragment extends Fragment {
         Bundle bundle = new Bundle();
 
         return bundle;
+    }
+
+    private void filterList(String text) {
+        List<NameInfo> filteredList = new ArrayList<>();
+        for (NameInfo nameInfo : namesInfo) {
+            if (nameInfo.getArabicName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(nameInfo);
+            } else if (nameInfo.getTranscriptName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(nameInfo);
+            } else if (nameInfo.getTranslateName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(nameInfo);
+            } else if (nameInfo.getInfoName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(nameInfo);
+            }
+
+            /*
+            if (Integer.parseInt(text) >= 1 && Integer.parseInt(text) <= 99) {
+                filteredList.add(names.get(Integer.parseInt(text) - 1));
+            }
+
+             */
+        }
+
+        if (filteredList.isEmpty()) {
+            Snackbar.make(binding.getRoot(), "Не найдено", BaseTransientBottomBar.LENGTH_SHORT);
+        } else {
+            namesInfoAdapter.setFilteredInfoList(filteredList);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        binding.searchName.clearFocus();
+        super.onResume();
     }
 }

@@ -1,4 +1,4 @@
-package ru.tabiin.alalasmaulhusna.adapters.names;
+package ru.tabiin.alasmaulhusna.adapters.names;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -15,9 +15,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
+import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
 import ru.tabiin.alasmaulhusna.objects.names.names.Name;
 import ru.tabiin.alasmaulhusna.R;
-import ru.tabiin.alasmaulhusna.objects.names.names.Name;
 import ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment;
 
 public class NamesAdapter extends RecyclerView.Adapter<NamesAdapter.ViewHolder> {
@@ -70,6 +70,11 @@ public class NamesAdapter extends RecyclerView.Adapter<NamesAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return names.size();
+    }
+
+    public void setFilteredList(List<Name> filteredList) {
+        this.names = filteredList;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

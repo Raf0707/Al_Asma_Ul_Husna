@@ -18,10 +18,11 @@ import java.util.List;
 import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.objects.names.info_names.NameInfo;
+import ru.tabiin.alasmaulhusna.objects.names.names.Name;
 
 public class NamesInfoAdapter extends RecyclerView.Adapter<NamesInfoAdapter.ViewHolder> {
-    public static final ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment CTX =
-            ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment.ctx.get();
+    public static final ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment CTX =
+            ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment.ctx.get();
 
     private LayoutInflater inflater;
     private List<NameInfo> namesInfo;
@@ -72,6 +73,10 @@ public class NamesInfoAdapter extends RecyclerView.Adapter<NamesInfoAdapter.View
         return namesInfo.size();
     }
 
+    public void setFilteredInfoList(List<NameInfo> filteredList) {
+        this.namesInfo = filteredList;
+        notifyDataSetChanged();
+    }
     public class ViewHolder extends RecyclerView.ViewHolder {
         final MaterialCardView namesInfoCard;
         final TextView arabicName;

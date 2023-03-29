@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.names_info:
 
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new ru.tabiin.alalasmaulhusna.ui.names.AllahNamesInfoFragment())
+                            .replace(R.id.containerFragment, new ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment())
                             .commit();
 
                     return true;

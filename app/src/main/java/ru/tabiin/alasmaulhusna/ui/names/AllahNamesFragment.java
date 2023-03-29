@@ -1,16 +1,23 @@
 package ru.tabiin.alasmaulhusna.ui.names;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter;
 import ru.tabiin.alasmaulhusna.databinding.FragmentAllahNamesBinding;
 import ru.tabiin.alasmaulhusna.objects.names.names.Name;
 
@@ -122,7 +129,7 @@ public class AllahNamesFragment extends Fragment {
 
     public static WeakReference<AllahNamesFragment> ctx = null;
     private List<Name> names = new ArrayList<>();
-    private ru.tabiin.alalasmaulhusna.adapters.names.NamesAdapter namesAdapter;
+    private ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter namesAdapter;
 
     private FragmentAllahNamesBinding binding;
 
@@ -133,8 +140,27 @@ public class AllahNamesFragment extends Fragment {
         binding = FragmentAllahNamesBinding.inflate(getLayoutInflater());
         ctx = new WeakReference<>(this);
 
+        binding.searchName.clearFocus();
+        binding.searchName.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                filterList(s);
+                return true;
+            }
+        });
+
+         binding.searchName.setOnClickListener(v -> {
+             binding.searchName.clearFocus();
+         });
+
+
         init();
-        namesAdapter = new ru.tabiin.alalasmaulhusna.adapters.names.NamesAdapter(requireActivity(), names);
+        namesAdapter = new ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter(requireActivity(), names);
         binding.drawerListItem.setAdapter(namesAdapter);
         binding.drawerListItem.setHasFixedSize(false);
 
@@ -142,9 +168,36 @@ public class AllahNamesFragment extends Fragment {
 
     }
 
+    private void filterList(String text) {
+        List<Name> filteredList = new ArrayList<>();
+        for (Name name : names) {
+            if (name.getName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(name);
+            }
+
+            /*
+            if (Integer.parseInt(text) >= 1 && Integer.parseInt(text) <= 99) {
+                filteredList.add(names.get(Integer.parseInt(text) - 1));
+            }
+
+             */
+        }
+
+        if (filteredList.isEmpty()) {
+            Snackbar.make(binding.getRoot(), "Не найдено", BaseTransientBottomBar.LENGTH_SHORT);
+        } else {
+            namesAdapter.setFilteredList(filteredList);
+        }
+    }
+
     public void init() {
         for(String n : namesAllaha){
             names.add(new Name(n));
         }
+    }
+    @Override
+    public void onResume() {
+        binding.searchName.clearFocus();
+        super.onResume();
     }
 }

@@ -236,6 +236,22 @@
                     app:cardCornerRadius="16dp"
                     app:cardUseCompatPadding="true">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Другие приложения"
+                        android:textSize="24dp"
+                        android:gravity="center">
+                    </TextView>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
                     <LinearLayout
                         android:id="@+id/bannerUmmaLife"
                         android:layout_width="match_parent"

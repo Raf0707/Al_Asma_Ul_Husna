@@ -9,10 +9,25 @@
     android:padding="16dp"
     tools:context="ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment">
 
+        <SearchView
+            android:id="@+id/searchName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search Allah name"
+            android:background="@drawable/conturdesc"
+            android:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/drawerListItem"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="56dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:layout_editor_absoluteX="-7dp"
             tools:layout_editor_absoluteY="16dp">
