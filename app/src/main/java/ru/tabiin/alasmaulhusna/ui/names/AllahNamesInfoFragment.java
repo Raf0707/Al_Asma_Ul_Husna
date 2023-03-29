@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
@@ -540,13 +541,6 @@ public class AllahNamesInfoFragment extends Fragment {
         for(String i : arabicName){
             namesDrawer.add(new DrawerNamesContent(i));
         }
-    }
-
-    @NonNull
-    public Bundle saveState() {
-        Bundle bundle = new Bundle();
-
-        return bundle;
     }
 
     private void filterList(String text) {
