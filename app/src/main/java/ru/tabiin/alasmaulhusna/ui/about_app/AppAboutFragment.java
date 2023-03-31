@@ -153,6 +153,7 @@ public class AppAboutFragment extends Fragment {
         });
 
 
+
         binding.sourceCodeBtn.setOnClickListener(v -> new CustomTabUtil()
                 .openCustomTab(getActivity(),
                         getString(R.string.source_code_url),
