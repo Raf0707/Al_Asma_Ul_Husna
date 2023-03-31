@@ -364,6 +364,197 @@
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/titleCardViewRamadan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:orientation="horizontal"
+                            android:padding="4dp">
+
+                            <ImageView
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:src="@drawable/ramadan_icon_v" />
+
+                            <LinearLayout
+                                android:layout_width="240dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center|center_vertical"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:gravity="center"
+                                    android:text="Ramadan"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:gravity="center"
+                                    android:text="@string/from_tabiin"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/appVersionBtnRamadan"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Версия 3.0.0.0"
+                                android:textAlignment="textStart"
+                                android:textSize="20sp"
+                                app:icon="@drawable/ic_baseline_error_outline_24"
+                                app:iconPadding="16dp"
+                                app:iconSize="24dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/sourceCodeBtnRamadan"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/source_code"
+                                android:textAlignment="textStart"
+                                android:textSize="20sp"
+                                app:icon="@drawable/ic_baseline_code_24"
+                                app:iconPadding="16dp"
+                                app:iconSize="24dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/downloadRamadanApp"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Установить Ramadan"
+                                android:textAlignment="textStart"
+                                android:textSize="20sp"
+                                app:icon="@drawable/baseline_download_24"
+                                app:iconPadding="16dp"
+                                app:iconSize="24dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/titleCardViewCounters"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:orientation="horizontal"
+                            android:padding="4dp">
+
+                            <ImageView
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:src="@drawable/counters_icon" />
+
+                            <LinearLayout
+                                android:layout_width="240dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center|center_vertical"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:gravity="center"
+                                    android:text="Counters"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:gravity="center"
+                                    android:text="@string/from_tabiin"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/appVersionBtnCounters"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Версия 3.0.0.0"
+                                android:textAlignment="textStart"
+                                android:textSize="20sp"
+                                app:icon="@drawable/ic_baseline_error_outline_24"
+                                app:iconPadding="16dp"
+                                app:iconSize="24dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/sourceCodeBtnCounters"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/source_code"
+                                android:textAlignment="textStart"
+                                android:textSize="20sp"
+                                app:icon="@drawable/ic_baseline_code_24"
+                                app:iconPadding="16dp"
+                                app:iconSize="24dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/downloadCountersApp"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Установить Counters"
+                                android:textAlignment="textStart"
+                                android:textSize="20sp"
+                                app:icon="@drawable/baseline_download_24"
+                                app:iconPadding="16dp"
+                                app:iconSize="24dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
             </LinearLayout>
         </LinearLayout>
 

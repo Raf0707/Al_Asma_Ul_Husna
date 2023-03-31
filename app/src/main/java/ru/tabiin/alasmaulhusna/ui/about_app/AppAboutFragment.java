@@ -30,7 +30,6 @@ import ru.tabiin.alasmaulhusna.util.BugReportHelper;
 import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
 import ru.tabiin.alasmaulhusna.BuildConfig;
 import ru.tabiin.alasmaulhusna.R;
-import ru.tabiin.alasmaulhusna.databinding.FragmentAppAboutBinding;
 import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
 import ru.tabiin.alasmaulhusna.util.BugReportHelper;
 import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
@@ -237,6 +236,53 @@ public class AppAboutFragment extends Fragment {
                         "https://ummalife.com/tabiin",
                         R.color.purple_300));
 
+        binding.sourceCodeBtnRamadan.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(),
+                        "https://github.com/Raf0707/Ramadan",
+                        R.color.purple_300));
+
+        binding.sourceCodeBtnRamadan.setOnLongClickListener(v -> {
+            addOnClick(v, "link to download Ramadan copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://github.com/Raf0707/Ramadan"));
+            return true;
+        });
+
+        binding.downloadRamadanApp.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(),
+                        "https://apps.rustore.ru/app/ru.tabiin.ramadan",
+                        R.color.purple_300));
+
+        binding.downloadRamadanApp.setOnLongClickListener(v -> {
+            addOnClick(v, "link to Ramadan sourse copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://apps.rustore.ru/app/ru.tabiin.ramadan"));
+            return true;
+        });
+
+        binding.sourceCodeBtnCounters.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(),
+                        "https://github.com/Raf0707/Counters",
+                        R.color.purple_300));
+
+        binding.sourceCodeBtnCounters.setOnLongClickListener(v -> {
+            addOnClick(v, "link to download Counters copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://github.com/Raf0707/Counters"));
+            return true;
+        });
+
+        binding.downloadCountersApp.setOnClickListener(v -> new CustomTabUtil()
+                .openCustomTab(getActivity(),
+                        "https://apps.rustore.ru/app/ru.tabiin.counters",
+                        R.color.purple_300));
+
+        binding.downloadCountersApp.setOnLongClickListener(v -> {
+            addOnClick(v, "link to Counters sourse copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://apps.rustore.ru/app/ru.tabiin.counters"));
+            return true;
+        });
     }
 
     public void addOnClick(View view, String text, ClipData clipData) {
