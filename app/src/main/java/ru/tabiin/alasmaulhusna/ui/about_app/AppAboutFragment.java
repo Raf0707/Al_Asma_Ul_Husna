@@ -103,6 +103,13 @@ public class AppAboutFragment extends Fragment {
             return true;
         });
 
+        binding.donateBtn.setOnLongClickListener(v -> {
+            addOnClick(v, "donate link copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://www.donationalerts.com/r/raf0707"));
+            return true;
+        });
+
         binding.rafailBtn.setOnLongClickListener(v -> {
             addOnClick(v, getString(R.string.raf_git_copylink),
                     ClipData.newPlainText(getString(R.string.getContext),
@@ -118,9 +125,9 @@ public class AppAboutFragment extends Fragment {
         });
 
         binding.rateBtn.setOnLongClickListener(v -> {
-            addOnClick(v, getString(R.string.vk_tabiin_coyplink),
+            addOnClick(v, "RuStore link rate copied",
                     ClipData.newPlainText(getString(R.string.rateApp),
-                            getString(R.string.tabiin)));
+                            "https://apps.rustore.ru/app/ru.tabiin.counters"));
             return true;
         });
 
@@ -130,6 +137,21 @@ public class AppAboutFragment extends Fragment {
                             getString(R.string.tabiin)));
             return true;
         });
+
+        binding.tgGroupBtn.setOnLongClickListener(v -> {
+            addOnClick(v, getString(R.string.tg_tabiin_coyplink),
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            getString(R.string.tgLink)));
+            return true;
+        });
+
+        binding.otherAppsBtn.setOnLongClickListener(v -> {
+            addOnClick(v, "Tabiin's Apps article link copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            getString(R.string.tabiin_android_dev)));
+            return true;
+        });
+
 
         binding.sourceCodeBtn.setOnClickListener(v -> new CustomTabUtil()
                 .openCustomTab(getActivity(),
@@ -216,25 +238,60 @@ public class AppAboutFragment extends Fragment {
             }
         });
 
+        binding.downloadUmmaLifeGooglePlay.setOnLongClickListener(v -> {
+            addOnClick(v, "Umma Life download link copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://play.google.com/store/apps/details?id=com.ummalife.android"));
+            return true;
+        });
+
         binding.vkUmmaLife.setOnClickListener(v -> new CustomTabUtil()
                 .openCustomTab(getActivity(),
                         "https://vk.com/ummalife_com?ysclid=lfot4irl1443773327",
                         R.color.purple_300));
+
+        binding.vkUmmaLife.setOnLongClickListener(v -> {
+            addOnClick(v, "VK-Group Umma Life link copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://vk.com/ummalife_com?ysclid=lfot4irl1443773327"));
+            return true;
+        });
 
         binding.tgUmmaLife.setOnClickListener(v -> new CustomTabUtil()
                 .openCustomTab(getActivity(),
                         "https://t.me/man_umma",
                         R.color.purple_300));
 
+        binding.tgUmmaLife.setOnLongClickListener(v -> {
+            addOnClick(v, "Telegram-Group Umma Life link copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://t.me/man_umma"));
+            return true;
+        });
+
         binding.webUmmaLife.setOnClickListener(v -> new CustomTabUtil()
                 .openCustomTab(getActivity(),
                         "https://ummalife.com",
                         R.color.purple_300));
 
+        binding.webUmmaLife.setOnLongClickListener(v -> {
+            addOnClick(v, "Website Umma Life link copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://ummalife.com"));
+            return true;
+        });
+
         binding.weAreInUmmaLife.setOnClickListener(v -> new CustomTabUtil()
                 .openCustomTab(getActivity(),
                         "https://ummalife.com/tabiin",
                         R.color.purple_300));
+
+        binding.weAreInUmmaLife.setOnLongClickListener(v -> {
+            addOnClick(v, "Tabiin group in Umma Life link copied",
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            "https://ummalife.com/tabiin"));
+            return true;
+        });
 
         binding.sourceCodeBtnRamadan.setOnClickListener(v -> new CustomTabUtil()
                 .openCustomTab(getActivity(),
