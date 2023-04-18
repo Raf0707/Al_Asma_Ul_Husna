@@ -6,10 +6,9 @@
     android:id="@+id/namesAllahDrawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context="ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment">
 
-        <SearchView
+        <android.widget.SearchView
             android:id="@+id/searchName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

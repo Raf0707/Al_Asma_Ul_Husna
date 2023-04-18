@@ -99,7 +99,7 @@ public class AppAboutFragment extends Fragment {
         binding.sourceCodeBtn.setOnLongClickListener(v -> {
             addOnClick(v, getString(R.string.link_to_source_copied),
                     ClipData.newPlainText(getString(R.string.getContext),
-                            getString(R.string.source_code_url)));
+                            "https://apps.rustore.ru/app/ru.tabiin.alasmaulhusna"));
             return true;
         });
 

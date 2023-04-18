@@ -11,6 +11,7 @@ import com.google.android.material.color.DynamicColors;
 import ru.tabiin.alasmaulhusna.databinding.ActivityMainBinding;
 import ru.tabiin.alasmaulhusna.ui.about_app.AppAboutFragment;
 import ru.tabiin.alasmaulhusna.ui.counter.AllahNamesCounterFragment;
+import ru.tabiin.alasmaulhusna.ui.counters.main.MainSwipeFragment;
 import ru.tabiin.alasmaulhusna.ui.names.AllahNamesFragment;
 import ru.tabiin.alasmaulhusna.util.SharedPreferencesUtils;
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.names_counter:
 
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.containerFragment, new AllahNamesCounterFragment())
+                            .replace(R.id.containerFragment, new MainSwipeFragment())
                             .commit();
 
                     return true;
