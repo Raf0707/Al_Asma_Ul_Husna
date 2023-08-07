@@ -61,6 +61,10 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.MyViewHo
         holder.binding.editDBCounterItem.setOnClickListener(v -> {
             clickListener.editItem(counterList.get(position));
         });
+
+        holder.binding.deleteDBCounterItem.setOnClickListener(v -> {
+            clickListener.deleteItem(counterList.get(position));
+        });
     }
 
     @Override

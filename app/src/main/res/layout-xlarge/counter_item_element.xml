@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingDefaultResource">
+    android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -35,15 +34,15 @@
                 <TextView
                     android:id="@+id/titleId"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="70dp"
+                    android:layout_marginRight="90dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="35sp"
+                    android:textSize="50dp"
                     android:ellipsize="marquee"
                     android:gravity="center"
-                    android:singleLine="false">
+                    android:singleLine="true">
                 </TextView>
 
                 <TextView
@@ -51,10 +50,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="70dp"
+                    android:layout_marginRight="90dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="30dp"
+                    android:textSize="50dp"
                     android:ellipsize="marquee"
                     android:gravity="center"
                     android:singleLine="true">
@@ -68,7 +67,7 @@
                     android:layout_marginRight="70dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="30dp"
+                    android:textSize="50dp"
                     android:ellipsize="marquee"
                     android:gravity="center"
                     android:singleLine="true">
@@ -78,16 +77,16 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/deleteDBCounterItem"
                 style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 app:iconGravity="textEnd"
                 app:icon="@drawable/ic_baseline_delete_forever_24"
                 android:visibility="visible"
                 app:cornerRadius="28dp"
-                app:iconSize="40dp"
+                app:iconSize="60dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.946"
+                app:layout_constraintHorizontal_bias="0.990"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.064" />
@@ -95,14 +94,14 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/editDBCounterItem"
                 style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 app:iconGravity="textEnd"
                 app:icon="@drawable/ic_baseline_edit_24"
                 android:visibility="visible"
                 app:cornerRadius="28dp"
-                app:iconSize="40dp"
-                app:layout_constraintHorizontal_bias="0.946"
+                app:iconSize="60dp"
+                app:layout_constraintHorizontal_bias="0.990"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -65,13 +65,4 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/backFromSettingsFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="400dp"
-        android:text="back">
-    </com.google.android.material.button.MaterialButton>
-
 </LinearLayout>

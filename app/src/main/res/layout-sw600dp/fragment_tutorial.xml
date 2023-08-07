@@ -33,7 +33,7 @@
         android:layout_height="59dp"
         android:gravity="center"
         android:imeOptions="actionDone"
-        android:text="Назад к счетчику"
+        android:text="Назад к счетчикам"
         android:textAllCaps="true"
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
@@ -106,26 +106,6 @@
         app:layout_constraintVertical_bias="0.074" />
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="42dp"
-        android:layout_height="41dp"
-        android:background="@drawable/baseline_exposure_neg_1_24"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:textAllCaps="true"
-
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.07" />
-
-    <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="41dp"
@@ -166,24 +146,6 @@
         app:layout_constraintVertical_bias="0.102" />
 
     <TextView
-        android:layout_width="42dp"
-        android:layout_height="41dp"
-        android:background="@drawable/ic_baseline_restart_alt_24"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:textAllCaps="true"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.845"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.102" />
-
-    <TextView
         android:id="@+id/textView11"
         android:layout_width="42dp"
         android:layout_height="41dp"
@@ -191,17 +153,50 @@
         android:gravity="center"
         android:imeOptions="actionDone"
         android:textAllCaps="true"
-        
         android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="0.697"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintVertical_bias="0.067" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:background="@drawable/baseline_exposure_neg_1_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+        android:textColorHint="@color/white"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <TextView
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:background="@drawable/ic_baseline_restart_alt_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+        android:textColorHint="@color/white"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.701"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.102" />
 
     <TextView
         android:id="@+id/textView12"
@@ -212,15 +207,14 @@
         android:imeOptions="actionDone"
         android:textAllCaps="true"
         android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="13sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="0.697"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.163" />
 
     <TextView
         android:id="@+id/counter_settings_set2"

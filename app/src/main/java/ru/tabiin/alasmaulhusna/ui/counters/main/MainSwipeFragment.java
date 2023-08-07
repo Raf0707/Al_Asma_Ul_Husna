@@ -1,7 +1,5 @@
 package ru.tabiin.alasmaulhusna.ui.counters.main;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,20 +12,22 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.adapters.counters.CounterAdapter;
 import ru.tabiin.alasmaulhusna.databinding.FragmentMainSwipeBinding;
+import ru.tabiin.alasmaulhusna.domain.dao.CounterDao;
 import ru.tabiin.alasmaulhusna.domain.database.CounterDatabase;
 import ru.tabiin.alasmaulhusna.domain.models.CounterItem;
+import ru.tabiin.alasmaulhusna.domain.repository.CounterRepository;
 import ru.tabiin.alasmaulhusna.ui.counters.swipe_counter.GestureCounterFragment;
 import ru.tabiin.alasmaulhusna.ui.counters.view_model.CounterViewModel;
 
@@ -38,123 +38,14 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
     private List<CounterItem> counterlist = new ArrayList<>();
     private CounterViewModel counterViewModel;
     private CounterItem counterForEdit;
-    //private CounterMainFragment counterMainFragment;
-    //private CounterBetaFragment counterBetaFragment;
     private GestureCounterFragment gestureCounterFragment;
-    private CounterDatabase counterDatabase;
-    private CounterAdapter.MyViewHolder holder;
-    private boolean edit;
     private String title;
     private int target;
     private int progress;
     private int id;
     private CounterItem counterItem;
-
-    private String[] namesOfAllah = new String[] {
-
-            "للهُﷻ ",
-            "الرَّحْمَانُﷻ ",
-            "الرَّحِيمُﷻ ",
-            "المَلِكُﷻ ",
-            "القُدُّوسُﷻ ",
-            "السَّلَامُﷻ ",
-            "المُؤمِنُﷻ ",
-            "المُهَيْمِنُﷻ ",
-            "العَزِيزُﷻ ",
-            "الجَبَّارُﷻ ",
-            "المُتَكَبِّرُﷻ ",
-            "الخَالِقُﷻ ",
-            "البَارِئُﷻ ",
-            "المُصَوِّرُﷻ ",
-            "الغَفَّارُﷻ ",
-            "القَهَّارُﷻ ",
-            "الوَهَّابُﷻ ",
-            "الرَّزَّاقُﷻ ",
-            "الفَتَّاحُﷻ ",
-            "العَلِيمُﷻ ",
-            "القَابِضُﷻ ",
-            "البَاسِطُﷻ ",
-            "الخَافِضُﷻ ",
-            "الرَّافِعُﷻ ",
-            "المُعِزُّﷻ ",
-            "المُذِلُّﷻ ",
-            "السَّمِيعُﷻ ",
-            "البَصِيرُﷻ ",
-            "الحَكَمُﷻُ ",
-            "العَدْلُﷻُ ",
-            "اللَّطِيفُﷻُ ",
-            "الخَبِيرُﷻ ",
-            "الحَلِيمُﷻ ",
-            "العَظِيمُﷻ ",
-            "الغَفُورُﷻ ",
-            "الشَّكُورُﷻ ",
-            "العَلِيُّﷻ ",
-            "الكَبِيرُﷻ ",
-            "الحَفِيظُﷻ ",
-            "المُقِيتُﷻ ",
-            "الحَسِيبُﷻ ",
-            "الجَلِيلُﷻ ",
-            "الكَرِيمُﷻ ",
-            "الرَّقِيبُﷻ ",
-            "المُجِيبُﷻ ",
-            "الوَاسِعُﷻ ",
-            "الحَكِيمُﷻ ",
-            "الوَدُودُﷻ ",
-            "المَجِيدُﷻ ",
-            "البَاعِثُﷻ ",
-            "الشَّهِيدُﷻ ",
-            "الحَقُّﷻ ",
-            "الوَكِيلُﷻ ",
-            "القَوِيُّﷻ ",
-            "المَتِينُﷻ ",
-            "الوَلِيُّﷻ ",
-            "الحَمِيدُﷻ ",
-            "المُحْصِيﷻ ",
-            "المُبْدِئُﷻ ",
-            "المُعِيدُﷻ ",
-            "المُحْيِيﷻ ",
-            "المُمِيتُﷻ ",
-            "الحَيُّﷻ ",
-            "القَيُّومُﷻ ",
-            "الوَاجِدُﷻ ",
-            "المَاجِدُﷻ ",
-            "الوَاحِدُﷻ ",
-            "الصَّمَدُﷻ ",
-            "القَادِرُﷻ ",
-            "المُقْتَدِرُﷻ ",
-            "المُقَدِّمُﷻ ",
-            "المُؤَخِّرُﷻ ",
-            "الأَوَّلُﷻ ",
-            "الآخِرُﷻ ",
-            "الظَّاهِرُﷻ ",
-            "البَاطِنُﷻ ",
-            "الوَالِيﷻ ",
-            "المُتَعَالِيﷻ ",
-            "البَرُّﷻ ",
-            "التَّوَّابُﷻ ",
-            "المُنْتَقِمُﷻ ",
-            "العَفُوُّﷻ ",
-            "الرَّءُؤفُﷻ ",
-            "مَالِكُ المُلْكِﷻ ",
-            "ذُو الجَلَالِ \nوَ الإِكْرَامِﷻ ",
-            "المُقْسِطُﷻ ",
-            "الجَامِعُﷻ ",
-            "الغَنِيُّﷻ ",
-            "المُغْنِيﷻ ",
-            "المَانِعُﷻ ",
-            "الضَّارُّﷻ ",
-            "النَّافِعُﷻ ",
-            "النُّورُﷻ ",
-            "الهَادِيﷻ ",
-            "البَدِيعُﷻ ",
-            "البَاقِيﷻ ",
-            "الوَارِثﷻ ",
-            "الرَّشِيدُﷻ ",
-            "الصَّبُورُﷻ ",
-    };
-
-    private List<CounterItem> counterItemList = new ArrayList<>();
-    private int initCounter = 0;
+    //CounterRepository counterRepository = new CounterRepository(
+            //requireActivity().getApplication());
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -167,7 +58,7 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
 
         counterViewModel = new ViewModelProvider(this,
                 (ViewModelProvider.Factory) ViewModelProvider.AndroidViewModelFactory
-                        .getInstance(getActivity().getApplication()))
+                        .getInstance(requireActivity().getApplication()))
                 .get(CounterViewModel.class);
 
         Bundle bundle = getArguments();
@@ -180,6 +71,10 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
             counterItem = new CounterItem(id, title, target, progress);
             counterViewModel.update(counterItem);
         }
+
+        binding.fabAddCounter.setOnClickListener(v -> {
+            onMaterialAlert(false);
+        });
 
         binding.searchCounters.clearFocus();
         binding.searchCounters.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -196,18 +91,25 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
             }
         });
 
+        binding.recycleCounter.addOnScrollListener(
+                new RecyclerView.OnScrollListener() {
+                    @Override
+                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                        if (dy < 0 && !binding.fabAddCounter.isShown())
+                            binding.fabAddCounter.show();
+                        else if (dy > 0 && binding.fabAddCounter.isShown())
+                            binding.fabAddCounter.hide();
+                    }
+                }
+        );
+
         binding.searchCounters.setOnClickListener(v -> {
             binding.searchCounters.clearFocus();
         });
 
-        initRecycleView();
+        //if (counterRepository.getAllData() == null) init();
         initViewModel();
-        if (initCounter == 0) {
-            init();
-            initCounter += 1;
-        }
-        counterViewModel.getAllCounterList();
-
+        initRecycleView();
         return binding.getRoot();
     }
 
@@ -222,7 +124,7 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
                 .get(CounterViewModel.class);
         counterViewModel.getCounterlistObserver()
                 .observe(requireActivity(), counterItems -> {
-                    if (counterItems == null) {
+                    if (counterItems.isEmpty()) {
                         binding.noRes.setVisibility(View.VISIBLE);
                         binding.recycleCounter.setVisibility(View.GONE);
                     } else {
@@ -235,7 +137,7 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
 
     public void onMaterialAlert(boolean isForEdit) {
         MaterialAlertDialogBuilder alert =
-                new MaterialAlertDialogBuilder(getContext());
+                new MaterialAlertDialogBuilder(requireContext());
 
         View dialogView = getLayoutInflater()
                 .inflate(R.layout.create_counter_dialog, null);
@@ -261,6 +163,10 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
 
         alert.setPositiveButton("ОК", (dialogInterface, i) -> {
 
+            if (counterTitle.getText().toString().length() == 0) {
+                counterTitle.setText(getRandomString(12));
+            }
+
             if (counterTarget.getText().toString().length() == 0) {
                 counterTarget.setText("10");
             }
@@ -284,68 +190,14 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
         alert.show();
     }
 
-    private void init() {
-        for (String i : namesOfAllah) {
-            if (counterItemList.size() < 100) {
+    /*private void init() {
+        //if (CounterDatabase.getInstance(getContext()) == null) {
+            for (String i : namesOfAllah) {
                 CounterItem counterItemL = new CounterItem(i, 10, 0);
-                counterItemList.add(counterItemL);
                 counterViewModel.insert(counterItemL);
             }
-        }
-    }
 
-    private void initModel() {
-        for (CounterItem c : counterItemList) {
-            counterViewModel.insert(c);
-        }
-    }
-
-    private void filterList(String text) {
-        List<CounterItem> filteredList = new ArrayList<>();
-        for (CounterItem ci : counterlist) {
-            if (ci.getTitle().toLowerCase().contains(text.toLowerCase())) {
-                filteredList.add(ci);
-            }
-
-            /*
-            if (Integer.parseInt(text) >= 1 && Integer.parseInt(text) <= 99) {
-                filteredList.add(names.get(Integer.parseInt(text) - 1));
-            }
-
-             */
-        }
-
-        if (filteredList.isEmpty()) {
-            Snackbar.make(binding.getRoot(), "Не найдено", BaseTransientBottomBar.LENGTH_SHORT);
-        } else {
-            counterAdapter.setFilteredList(filteredList);
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        //Проверяем по коду нужный результат
-        if(requestCode == 120) {
-            if(resultCode == Activity.RESULT_OK) {
-                //Действия при возврате результата
-                String updateTitle = data.getStringExtra("updateTitle");
-                int updateTarget = data.getIntExtra("updateTarget", 10);
-                int updateProgress = data.getIntExtra("updateProgress", progress);
-
-                CounterItem counterItem = new CounterItem(updateTitle, updateTarget,
-                        updateProgress);
-
-                title =  updateTitle;
-                target = updateTarget;
-                progress = updateProgress;
-
-                counterViewModel.update(counterItem);
-            }
-        }
-    }
-
-
+    }*/
     @Override
     public void itemClick(CounterItem counterItem) {
 
@@ -371,6 +223,31 @@ public class MainSwipeFragment extends Fragment implements CounterAdapter.Handle
     public void editItem(CounterItem counterItem) {
         this.counterForEdit = counterItem;
         onMaterialAlert(true);
+    }
+
+    public static String getRandomString( int length) {
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(3);
+            long result = 0;
+            switch (number) {
+                case 0:
+                    result = Math.round(Math.random() * 25 + 65);
+                    sb.append((char) result);
+                    break;
+                case 1:
+                    result = Math.round(Math.random() * 25 + 97);
+                    sb.append((char) result);
+                    break;
+                case 2:
+                    sb.append(new Random().nextInt(10));
+                    break;
+            }
+
+
+        }
+        return sb.toString();
     }
 
 }

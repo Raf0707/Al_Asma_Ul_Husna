@@ -6,6 +6,8 @@ import android.net.Uri;
 import androidx.browser.customtabs.CustomTabColorSchemeParams;
 import androidx.browser.customtabs.CustomTabsIntent;
 
+import ru.tabiin.alasmaulhusna.R;
+
 public class CustomTabUtil {
 
     public void openCustomTab(Context context, String URL, int colorInt) {
@@ -13,14 +15,9 @@ public class CustomTabUtil {
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(context, Uri.parse(URL));
 
-        //Set tab color
         CustomTabColorSchemeParams defaultColors = new CustomTabColorSchemeParams.Builder()
                 .setToolbarColor(colorInt)
                 .build();
-        builder/*intentBuilder*/.setDefaultColorSchemeParams(defaultColors);
-
-        //Set animation
-        //builder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
-        //builder.setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+        builder.setDefaultColorSchemeParams(defaultColors);
     }
 }

@@ -2,11 +2,14 @@ package ru.tabiin.alasmaulhusna.ui.counters.swipe_counter;
 
 import static ru.tabiin.alasmaulhusna.util.UtilFragment.changeFragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -15,6 +18,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.text.MessageFormat;
 
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentGestureCounterBinding;
@@ -34,6 +39,9 @@ public class GestureCounterFragment extends Fragment {
     private CounterItem counterItem;
     private CounterViewModel counterViewModel;
     private MainSwipeFragment mainSwipeFragment;
+
+    private int maxValue;
+    private int defaultValue = 10;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -111,6 +119,84 @@ public class GestureCounterFragment extends Fragment {
             counterItem.title = binding.counterTitle.getText().toString();
             counterItem.target = Integer.parseInt(binding.counterTarget.getText().toString());
             counterItem.progress = counter;
+            counterViewModel.update(counterItem);
+        });
+
+        binding.deleteCounter.setOnClickListener(v -> {
+            removeCounterAlert();
+        });
+
+        binding.editCounter.setOnClickListener(v -> {
+            binding.counterTarget.setCursorVisible(true);
+            binding.counterTarget.setFocusableInTouchMode(true);
+            binding.counterTarget.setEnabled(true);
+
+            binding.counterTitle.setCursorVisible(true);
+            binding.counterTitle.setFocusableInTouchMode(true);
+            binding.counterTitle.setEnabled(true);
+
+            binding.counterTarget.requestFocus();
+
+            binding.counterTarget.setSelection(
+                    binding.counterTarget.getText().length());
+
+            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                    WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+
+            getActivity().getWindow().setSoftInputMode(
+                    WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+
+            getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+            InputMethodManager imm = (InputMethodManager) getActivity()
+                    .getSystemService(Context
+                            .INPUT_METHOD_SERVICE);
+
+            if (imm != null) {
+                imm.showSoftInput(binding.counterTarget, InputMethodManager.SHOW_FORCED);
+            }
+        });
+
+        binding.saveEdition.setOnClickListener(v -> {
+            binding.counterTarget.setText(binding.counterTarget.getText().toString()
+                    .replaceAll("[\\.\\-,\\s]+", ""));
+
+            binding.counterTarget.setCursorVisible(false);
+            binding.counterTarget.setFocusableInTouchMode(false);
+            binding.counterTarget.setEnabled(false);
+
+            binding.counterTitle.setCursorVisible(false);
+            binding.counterTitle.setFocusableInTouchMode(false);
+            binding.counterTitle.setEnabled(false);
+
+            if (binding.counterTarget.getText().toString().length() == 0) {
+                binding.counterTarget.setText(defaultValue);
+                maxValue = Integer.parseInt(binding.counterTarget.getText().toString());
+
+                Snackbar.make(requireView(),
+                        new StringBuilder().append("Вы не ввели цель. По умолчанию: ")
+                                .append(defaultValue),
+                        Snackbar.LENGTH_LONG).show();
+
+            } else {
+
+                if (Integer.parseInt(binding.counterTarget.getText().toString()) <= 0) {
+                    Snackbar.make(requireView(), new StringBuilder()
+                                    .append("Введите число больше нуля!"),
+                            Snackbar.LENGTH_LONG).show();
+
+                } else {
+
+                    Snackbar.make(requireView(),
+                            new StringBuilder().append("Цель установлена"),
+                            Snackbar.LENGTH_LONG).show();
+
+                    maxValue = Integer.parseInt(binding.counterTarget.getText().toString());
+                }
+            }
+
+            counterItem.title = binding.counterTitle.getText().toString();
+            counterItem.target = Integer.parseInt(binding.counterTarget.getText().toString());
             counterViewModel.update(counterItem);
         });
 
@@ -200,6 +286,28 @@ public class GestureCounterFragment extends Fragment {
                     binding.gestureCounter
                             .setText(new StringBuilder()
                                     .append("0"));
+                })
+                .setNeutralButton("Отмена",
+                        (dialogInterface, i) ->
+                                dialogInterface.cancel())
+                .show();
+    }
+
+    public void removeCounterAlert() {
+        new MaterialAlertDialogBuilder(requireContext(),
+                R.style.AlertDialogTheme)
+                .setTitle("Remove")
+                .setMessage("Вы уверены, что хотите удалить счетчик? ")
+                .setPositiveButton("Удалить", (dialogInterface, i) -> {
+                    counterItem.title = binding.counterTitle.getText().toString();
+                    counterItem.target = Integer.parseInt(binding.counterTarget
+                            .getText().toString());
+                    counterViewModel.delete(counterItem);
+                    changeFragment(requireActivity(),
+                            new MainSwipeFragment(),
+                            R.id.containerFragment,
+                            null
+                    );
                 })
                 .setNeutralButton("Отмена",
                         (dialogInterface, i) ->

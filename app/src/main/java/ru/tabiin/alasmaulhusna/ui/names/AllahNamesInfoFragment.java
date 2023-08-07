@@ -38,7 +38,7 @@ public class AllahNamesInfoFragment extends Fragment {
     private List<Name> names = new ArrayList<>();
     private List<DrawerNamesContent> namesDrawer = new ArrayList<>();
     private NamesInfoAdapter namesInfoAdapter;
-    private ru.tabiin.alalasmaulhusna.adapters.names.DrawerNamesAdapter drawerNamesAdapter;
+    private ru.tabiin.alasmaulhusna.adapters.names.DrawerNamesAdapter drawerNamesAdapter;
     private ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter namesAdapter;
 
     private MyDrawerLayout mDrawerLayout;
@@ -496,7 +496,7 @@ public class AllahNamesInfoFragment extends Fragment {
         binding.drawerListItem.setAdapter(namesInfoAdapter);
         binding.drawerListItem.setHasFixedSize(false);
 
-        drawerNamesAdapter = new ru.tabiin.alalasmaulhusna.adapters.names.DrawerNamesAdapter(getContext(), namesDrawer, binding.drawerListItem);
+        drawerNamesAdapter = new ru.tabiin.alasmaulhusna.adapters.names.DrawerNamesAdapter(getContext(), namesDrawer, binding.drawerListItem);
         binding.nameDrawerInfo.setAdapter(drawerNamesAdapter);
         binding.nameDrawerInfo.setHasFixedSize(false);
 

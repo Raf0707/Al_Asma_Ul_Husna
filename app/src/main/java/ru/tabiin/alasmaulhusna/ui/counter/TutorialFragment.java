@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentTutorialBinding;
+import ru.tabiin.alasmaulhusna.ui.counters.main.MainSwipeFragment;
+import ru.tabiin.alasmaulhusna.ui.counters.swipe_counter.GestureCounterFragment;
 import ru.tabiin.alasmaulhusna.util.UtilFragment;
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentTutorialBinding;
@@ -24,7 +26,7 @@ public class TutorialFragment extends Fragment {
 
         binding.backGestureCounter.setOnClickListener(v -> {
             UtilFragment.changeFragment(requireActivity(),
-                    new AllahNamesCounterFragment(),
+                    new MainSwipeFragment(),
                     R.id.containerFragment,
                     savedInstanceState
             );

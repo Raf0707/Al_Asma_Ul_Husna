@@ -1,4 +1,4 @@
-package ru.tabiin.alalasmaulhusna.adapters.names;
+package ru.tabiin.alasmaulhusna.adapters.names;
 
 import static java.lang.String.format;
 

@@ -17,6 +17,7 @@ public class CounterViewModel extends AndroidViewModel {
     private CounterRepository counterRepository;
     
     public MutableLiveData<CounterItem> currentCounter;
+    private int counterItemCurrent = 0;
 
     public CounterViewModel(@NonNull Application application) {
         super(application);
@@ -44,11 +45,12 @@ public class CounterViewModel extends AndroidViewModel {
         getAllCounterList();
     }
     public void insert(String title, int target) {
-        //counterRepository.insertData(counterItem);
-        CounterItem counterItem = new CounterItem(title, target, 0);
-        counterRepository.insertData(counterItem);
-        //counterDatabase.counterDao().insertCounter(counterItem);
-        getAllCounterList();
+        if (counterItemCurrent < 99) {
+            CounterItem counterItem = new CounterItem(title, target, 0);
+            counterRepository.insertData(counterItem);
+            getAllCounterList();
+        }
+        counterItemCurrent++;
     }
     public void update(CounterItem counterItem) {
         counterRepository.updateData(counterItem);

@@ -1,5 +1,6 @@
 package ru.tabiin.alasmaulhusna.domain.models;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -12,6 +13,12 @@ public class CounterItem implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     public int id;
+
+    //@ColumnInfo(name = "max_count", defaultValue = "99")
+    //@NonNull public static final int maxCount = 99;
+
+    //@ColumnInfo(name = "counter_item_name", defaultValue = "0")
+    //@NonNull public int counterItemName;
 
     @ColumnInfo(name = "title")
     public String title;
@@ -72,6 +79,8 @@ public class CounterItem implements Serializable {
         return target;
     }
 
+    //public int getMaxCount() {return maxCount;}
+
     public void setTarget(int target) {
         this.target = target;
     }
@@ -107,6 +116,10 @@ public class CounterItem implements Serializable {
     public void setCounterType(CounterType counterType) {
         this.counterType = counterType;
     }
+
+    //public int getCounterItemName() {return counterItemName;}
+
+    //public void setCounterItemName(int counterItemName) {this.counterItemName = counterItemName;}
 
     @Override
     public String toString() {
