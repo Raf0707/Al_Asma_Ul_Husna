@@ -27,13 +27,8 @@ import ru.tabiin.alasmaulhusna.BuildConfig;
 import ru.tabiin.alasmaulhusna.R;
 import ru.tabiin.alasmaulhusna.databinding.FragmentAppAboutBinding;
 import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
-import ru.tabiin.alasmaulhusna.util.BugReportHelper;
 import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
-import ru.tabiin.alasmaulhusna.BuildConfig;
-import ru.tabiin.alasmaulhusna.R;
-import ru.tabiin.alasmaulhusna.ui.settings.SettingsFragment;
-import ru.tabiin.alasmaulhusna.util.BugReportHelper;
-import ru.tabiin.alasmaulhusna.util.CustomTabUtil;
+
 
 
 public class AppAboutFragment extends Fragment {
@@ -74,11 +69,7 @@ public class AppAboutFragment extends Fragment {
 
         binding.appVersionBtn.setText(new StringBuilder()
                 .append(getString(R.string.version))
-                .append(getString(R.string.str_dv))
-                .append(BuildConfig.VERSION_NAME)
-                .append(getString(R.string.val_str_sk_right))
-                .append(BuildConfig.VERSION_CODE)
-                .append(getString(R.string.val_str_sk_left))
+                .append(" 7.0")
                 .toString());
 
         binding.appVersionBtn.setOnLongClickListener(v -> {
@@ -86,13 +77,8 @@ public class AppAboutFragment extends Fragment {
                     ClipData.newPlainText(
                             getString(R.string.getContext),
                             new StringBuilder()
-                                    .append(getString(R.string.Tabiin_str_Version))
                                     .append(getString(R.string.version))
-                                    .append(getString(R.string.str_dv))
-                                    .append(BuildConfig.VERSION_NAME)
-                                    .append(getString(R.string.val_str_sk_right))
-                                    .append(BuildConfig.VERSION_CODE)
-                                    .append(getString(R.string.val_str_sk_left))
+                                    .append(" 7.0")
                                     .toString()));
             return true;
         });
