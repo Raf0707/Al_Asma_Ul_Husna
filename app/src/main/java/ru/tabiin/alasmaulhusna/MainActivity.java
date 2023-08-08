@@ -1,12 +1,20 @@
 package ru.tabiin.alasmaulhusna;
 
+import android.content.Intent;
 import android.os.Bundle;
+import androidx.transition.TransitionManager;
+import android.view.ViewGroup;
 import android.view.Window;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.transition.Transition;
+import androidx.transition.TransitionInflater;
 
 import com.google.android.material.color.DynamicColors;
+import com.google.android.material.transition.MaterialFadeThrough;
 
 import ru.tabiin.alasmaulhusna.databinding.ActivityMainBinding;
 import ru.tabiin.alasmaulhusna.ui.about_app.AppAboutFragment;
@@ -42,9 +50,22 @@ public class MainActivity extends AppCompatActivity {
 
         appAboutFragment = new AppAboutFragment();
 
+        Transition transition = TransitionInflater.from(this).inflateTransition(android.R.transition.fade);
+        Transition transition1 = TransitionInflater.from(this).inflateTransition(android.R.transition.explode);
+        Transition transition2 = TransitionInflater.from(this).inflateTransition(android.R.transition.move);
+        Transition transition3 = TransitionInflater.from(this).inflateTransition(android.R.transition.slide_bottom);
+        Transition transition4 = TransitionInflater.from(this).inflateTransition(android.R.transition.slide_left);
+        Transition transition5 = TransitionInflater.from(this).inflateTransition(android.R.transition.slide_right);
+        ViewGroup fragmentContainer = findViewById(R.id.containerFragment);
+        //Transition transition = MaterialFadeThrough.create(getApplicationContext());
+
         binding.bottomNavView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.names_list:
+                    transition.setDuration(1000); // Установите желаемую продолжительность анимации
+                    transition1.setDuration(1000);
+                    transition2.setDuration(1000);
+                    TransitionManager.beginDelayedTransition(fragmentContainer, transition2);
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new AllahNamesFragment())
@@ -53,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.names_info:
+                    transition.setDuration(1000); // Установите желаемую продолжительность анимации
+                    transition1.setDuration(1000);
+                    transition2.setDuration(1000);
+                    TransitionManager.beginDelayedTransition(fragmentContainer, transition2);
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment())
@@ -61,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.names_counter:
+                    transition.setDuration(1000); // Установите желаемую продолжительность анимации
+                    transition1.setDuration(1000);
+                    transition2.setDuration(1000);
+                    TransitionManager.beginDelayedTransition(fragmentContainer, transition2);
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new MainSwipeFragment())
@@ -69,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.app_about:
+                    transition.setDuration(1000); // Установите желаемую продолжительность анимации
+                    transition1.setDuration(1000);
+                    transition2.setDuration(1000);
+                    TransitionManager.beginDelayedTransition(fragmentContainer, transition2);
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new AppAboutFragment())

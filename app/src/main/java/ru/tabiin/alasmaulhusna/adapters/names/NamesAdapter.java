@@ -6,6 +6,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,10 +30,12 @@ public class NamesAdapter extends RecyclerView.Adapter<NamesAdapter.ViewHolder> 
     private List<Name> names;
     private TextView name;
     private RecyclerView recyclerView;
+    //private Animation mAnimation;
 
     public NamesAdapter(Context context, List<Name> names) {
         this.names = names;
         this.inflater = LayoutInflater.from(context);
+        //mAnimation = AnimationUtils.loadAnimation(context, R.anim.fade_in);
     }
 
     public NamesAdapter(Context context, List<Name> names, RecyclerView recyclerView) {
@@ -65,6 +69,7 @@ public class NamesAdapter extends RecyclerView.Adapter<NamesAdapter.ViewHolder> 
                     Snackbar.LENGTH_SHORT)
                     .show();
         });
+        //holder.nameView.startAnimation(mAnimation); // Здесь применяется анимация появления элемента
     }
 
     @Override

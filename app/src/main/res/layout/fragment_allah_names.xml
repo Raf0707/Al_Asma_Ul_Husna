@@ -26,6 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="56dp"
+            android:transitionGroup="true"
+            android:layoutAnimation="@anim/layout_fall_down"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:layout_editor_absoluteX="-7dp"
             tools:layout_editor_absoluteY="16dp">

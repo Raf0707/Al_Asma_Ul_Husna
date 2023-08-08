@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import android.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
+import androidx.transition.Transition;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.transition.MaterialFadeThrough;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -132,6 +134,7 @@ public class AllahNamesFragment extends Fragment {
     private ru.tabiin.alasmaulhusna.adapters.names.NamesAdapter namesAdapter;
 
     private FragmentAllahNamesBinding binding;
+    MaterialFadeThrough materialFadeThrough = new MaterialFadeThrough();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
