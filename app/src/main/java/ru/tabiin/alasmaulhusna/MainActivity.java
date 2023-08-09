@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     transition.setDuration(1000); // Установите желаемую продолжительность анимации
                     transition1.setDuration(1000);
                     transition2.setDuration(1000);
-                    TransitionManager.beginDelayedTransition(fragmentContainer, transition2);
+                    TransitionManager.beginDelayedTransition(fragmentContainer, transition);
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new AllahNamesFragment())
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     transition.setDuration(1000); // Установите желаемую продолжительность анимации
                     transition1.setDuration(1000);
                     transition2.setDuration(1000);
-                    TransitionManager.beginDelayedTransition(fragmentContainer, transition2);
+                    TransitionManager.beginDelayedTransition(fragmentContainer, transition);
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new ru.tabiin.alasmaulhusna.ui.names.AllahNamesInfoFragment())
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     transition.setDuration(1000); // Установите желаемую продолжительность анимации
                     transition1.setDuration(1000);
                     transition2.setDuration(1000);
-                    TransitionManager.beginDelayedTransition(fragmentContainer, transition2);
+                    TransitionManager.beginDelayedTransition(fragmentContainer, transition);
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new MainSwipeFragment())
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     transition.setDuration(1000); // Установите желаемую продолжительность анимации
                     transition1.setDuration(1000);
                     transition2.setDuration(1000);
-                    TransitionManager.beginDelayedTransition(fragmentContainer, transition2);
+                    TransitionManager.beginDelayedTransition(fragmentContainer, transition);
 
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.containerFragment, new AppAboutFragment())
