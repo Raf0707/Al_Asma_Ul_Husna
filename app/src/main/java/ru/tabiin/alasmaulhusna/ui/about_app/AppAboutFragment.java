@@ -135,7 +135,7 @@ public class AppAboutFragment extends Fragment {
         binding.otherAppsBtn.setOnLongClickListener(v -> {
             addOnClick(v, "Tabiin's Apps article link copied",
                     ClipData.newPlainText(getString(R.string.getContext),
-                            getString(R.string.tabiin_android_dev)));
+                            "https://apps.rustore.ru/developer/ZPBnoCoBczpBFPZK0munW8NSpRTEayCj"));
             return true;
         });
 
